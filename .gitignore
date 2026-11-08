@@ -1,0 +1,15 @@
+# Test & debug files
+test_cetu.py
+screenshot_*.png
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
