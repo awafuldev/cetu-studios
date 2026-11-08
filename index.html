@@ -1,1250 +1,512 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth bg-[#151613] text-[#F0E4C4]">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cetu Studios — Digital Engineering & Software Studio</title>
-  <meta name="description" content="Construimos tecnología que impulsa negocios. Desde experiencias web hasta sistemas empresariales personalizados. Complejo por dentro. Simple por fuera.">
+  <title>Cetu Studios — Desarrollo Web y Software Empresarial</title>
+  <meta name="description" content="Transformamos ideas en soluciones digitales. Diseñamos y desarrollamos páginas web, sistemas y software personalizado para ayudar a los negocios a crecer.">
   <meta name="author" content="Cetu Studios">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Cetu Studios — Digital Engineering & Software Studio">
-  <meta property="og:description" content="Construimos tecnología que impulsa negocios. Complejo por dentro. Simple por fuera.">
+  <meta property="og:title" content="Cetu Studios — Desarrollo Web y Software Empresarial">
+  <meta property="og:description" content="Transformamos ideas en soluciones digitales. Páginas web, ecommerce, sistemas y software a medida.">
   <meta property="og:image" content="assets/hero-3d.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/cetu-emblem-gold.png">
   <link rel="apple-touch-icon" href="assets/cetu-emblem-gold.png">
 
-  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            fondo: '#151613',
-            superficie: '#1C1D19',
-            elevada: '#232520',
-            dorado: '#D6AF34',
-            doradoPalido: '#F7DE7E',
-            bronce: '#805C12',
-            crema: '#FDFBF3',
-            cremaSuave: '#F0E4C4'
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace']
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Official Stylesheet -->
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-[#151613] text-[#F0E4C4] font-sans antialiased selection:bg-[#D6AF34]/20 selection:text-[#F7DE7E]">
+<body>
 
-  <!-- Top System Status Strip -->
-  <div class="w-full bg-[#11120F] border-b border-[#805C12]/30 py-1.5 px-4 sm:px-8 text-xs font-mono text-[#F0E4C4]/80 flex items-center justify-between z-50 relative">
-    <div class="flex items-center gap-2.5">
-      <span class="inline-block w-2 h-2 rounded-full bg-[#D6AF34] gold-beacon"></span>
-      <span class="text-[#FDFBF3] font-medium tracking-wide">ESTUDIO DE INGENIERÍA DIGITAL</span>
-      <span class="text-[#805C12]">/</span>
-      <span class="text-[#D6AF34]">REPÚBLICA DOMINICANA & GLOBAL</span>
-    </div>
-    <div class="hidden md:flex items-center gap-4 text-[#F0E4C4]/70">
-      <span>Q1/Q2 DISPONIBILIDAD PARA PROYECTOS EMPRESARIALES</span>
-      <span class="text-[#805C12]">|</span>
-      <span class="text-[#D6AF34] font-semibold">COMPLEJO POR DENTRO. SIMPLE POR FUERA.</span>
-    </div>
-  </div>
-
-  <!-- Sticky Refined Navigation Bar -->
-  <header id="main-navbar" class="sticky top-0 w-full z-40 transition-all duration-300 bg-[#151613]/90 backdrop-blur-md border-b border-[#805C12]/25">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[68px] flex items-center justify-between">
-      
-      <!-- Official Logo Lockup -->
-      <a href="#inicio" class="flex items-center gap-3 group">
-        <img src="assets/cetu-navbar-logo.png" alt="Cetu Studios Logo" class="h-9 w-auto object-contain transition-transform group-hover:scale-[1.02]">
+  <!-- ═══════════════════════════════════════════
+       NAVEGACIÓN
+  ═══════════════════════════════════════════ -->
+  <header id="navbar">
+    <div class="nav-inner">
+      <a href="#inicio" class="nav-logo">
+        <img src="assets/cetu-navbar-logo.png" alt="Cetu Studios" height="36">
       </a>
 
-      <!-- Center Desktop Nav Links -->
-      <nav class="hidden md:flex items-center space-x-8 text-sm">
-        <a href="#inicio" class="nav-link text-[#F0E4C4] hover:text-[#D6AF34] transition-colors">Inicio</a>
-        <a href="#servicios" class="nav-link text-[#F0E4C4] hover:text-[#D6AF34] transition-colors">Servicios</a>
-        <a href="#soluciones" class="nav-link text-[#F0E4C4] hover:text-[#D6AF34] transition-colors">Soluciones</a>
-        <a href="#metodologia" class="nav-link text-[#F0E4C4] hover:text-[#D6AF34] transition-colors">Metodología</a>
-        <a href="#portafolio" class="nav-link text-[#F0E4C4] hover:text-[#D6AF34] transition-colors">Proyectos</a>
-        <a href="#diferencia" class="nav-link text-[#F0E4C4] hover:text-[#D6AF34] transition-colors">Nosotros</a>
+      <nav class="nav-links" id="nav-links">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#proyectos" class="nav-link">Proyectos</a>
+        <a href="#nosotros" class="nav-link">Nosotros</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
       </nav>
 
-      <!-- Right CTA Button -->
-      <div class="hidden md:flex items-center gap-4">
-        <a href="#contacto" class="btn-gold-primary text-xs py-2.5 px-4">
-          <span>Hablemos de tu proyecto</span>
-          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-        </a>
-      </div>
+      <a href="#contacto" class="btn-primary nav-cta">Hablemos de tu proyecto</a>
 
-      <!-- Mobile Hamburger Button -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-[#D6AF34] hover:text-[#F7DE7E] focus:outline-none" aria-label="Abrir navegación">
-        <i data-lucide="menu" class="w-6 h-6"></i>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
       </button>
     </div>
 
-    <!-- Mobile Drawer Navigation -->
-    <div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-[68px] bottom-0 bg-[#151613]/98 backdrop-blur-2xl border-t border-[#805C12]/40 p-6 flex flex-col justify-between overflow-y-auto z-50">
-      <div class="space-y-4 pt-2">
-        <div class="text-xs font-mono text-[#D6AF34] uppercase tracking-wider mb-2">Menú de Navegación</div>
-        <a href="#inicio" class="mobile-nav-link block text-xl text-[#FDFBF3] font-medium py-2.5 border-b border-[#805C12]/30">Inicio</a>
-        <a href="#servicios" class="mobile-nav-link block text-xl text-[#FDFBF3] font-medium py-2.5 border-b border-[#805C12]/30">Servicios</a>
-        <a href="#soluciones" class="mobile-nav-link block text-xl text-[#FDFBF3] font-medium py-2.5 border-b border-[#805C12]/30">Soluciones</a>
-        <a href="#metodologia" class="mobile-nav-link block text-xl text-[#FDFBF3] font-medium py-2.5 border-b border-[#805C12]/30">Metodología</a>
-        <a href="#portafolio" class="mobile-nav-link block text-xl text-[#FDFBF3] font-medium py-2.5 border-b border-[#805C12]/30">Proyectos</a>
-        <a href="#diferencia" class="mobile-nav-link block text-xl text-[#FDFBF3] font-medium py-2.5 border-b border-[#805C12]/30">Nosotros</a>
-      </div>
-
-      <div class="pt-6 border-t border-[#805C12]/30 space-y-3">
-        <a href="#contacto" class="mobile-nav-link btn-gold-primary w-full text-center py-3.5">
-          Hablemos de tu proyecto →
-        </a>
-        <a href="https://wa.me/18090000000?text=Hola%20Cetu%20Studios,%20quiero%20conversar%20sobre%20un%20proyecto%20tecnologico" target="_blank" rel="noopener noreferrer" class="btn-gold-secondary w-full text-center py-3">
-          <i data-lucide="message-square" class="w-4 h-4 text-[#D6AF34]"></i>
-          <span>Contactar por WhatsApp</span>
-        </a>
-        <div class="text-[11px] font-mono text-[#F0E4C4]/60 text-center pt-2">
-          CETU STUDIOS · REPÚBLICA DOMINICANA
-        </div>
-      </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#inicio" class="mobile-link">Inicio</a>
+      <a href="#servicios" class="mobile-link">Servicios</a>
+      <a href="#proyectos" class="mobile-link">Proyectos</a>
+      <a href="#nosotros" class="mobile-link">Nosotros</a>
+      <a href="#contacto" class="mobile-link">Contacto</a>
+      <a href="#contacto" class="btn-primary mobile-cta">Hablemos de tu proyecto</a>
     </div>
   </header>
 
-  <!-- SECTION 1: HERO SECTION — COMPOSICIÓN EDITORIAL DE LUJO -->
-  <section id="inicio" class="relative pt-12 pb-24 md:pt-20 md:pb-32 overflow-hidden bg-cetu-grid">
-    <!-- Ambient Gold Radial Glows -->
-    <div class="absolute top-1/4 right-1/4 w-[700px] h-[700px] rounded-full bg-[#D6AF34]/6 blur-[140px] pointer-events-none"></div>
-    <div class="absolute bottom-10 left-10 w-[500px] h-[500px] rounded-full bg-[#805C12]/8 blur-[120px] pointer-events-none"></div>
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section id="inicio" class="hero">
+    <div class="hero-glow"></div>
+    <div class="container">
+      <div class="hero-layout">
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-        
-        <!-- Left Side: Editorial Typography & Value Statement -->
-        <div class="lg:col-span-6 space-y-7">
-          
-          <div class="inline-flex items-center gap-2.5 cetu-tag">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#D6AF34]"></span>
-            <span>CETU STUDIOS / DIGITAL ENGINEERING</span>
-          </div>
-
-          <h1 class="hero-headline text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-[#FDFBF3] leading-[1.14]">
-            Construimos tecnología <br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FDFBF3] via-[#F7DE7E] to-[#D6AF34]">
-              que impulsa negocios.
-            </span>
+        <div class="hero-content">
+          <p class="hero-label">Estudio de Desarrollo Digital · República Dominicana</p>
+          <h1 class="hero-title">
+            Transformamos ideas en <span class="text-gold">soluciones digitales.</span>
           </h1>
-
-          <p class="text-base sm:text-lg text-[#F0E4C4] leading-relaxed max-w-xl font-normal">
-            Desde experiencias web hasta sistemas empresariales personalizados. Desarrollamos soluciones digitales que transforman la manera en que las empresas trabajan y crecen.
+          <p class="hero-subtitle">
+            Diseñamos y desarrollamos páginas web, sistemas y software personalizado para ayudar a los negocios a crecer y trabajar mejor.
           </p>
-
-          <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-            <a href="#contacto" class="btn-gold-primary">
-              <span>Comenzar un proyecto</span>
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-            <a href="#soluciones" class="btn-gold-secondary">
-              <i data-lucide="layers" class="w-4 h-4 text-[#D6AF34]"></i>
-              <span>Explorar soluciones</span>
-            </a>
+          <div class="hero-actions">
+            <a href="#servicios" class="btn-primary">Conoce nuestros servicios</a>
+            <a href="#contacto" class="btn-secondary">Inicia tu proyecto →</a>
           </div>
-
-          <!-- Discrete Value Footnote -->
-          <div class="pt-6 border-t border-[#805C12]/30 text-xs font-mono text-[#F0E4C4]/70 flex flex-wrap items-center gap-2">
-            <span>Diseño estratégico</span>
-            <span class="text-[#D6AF34]">·</span>
-            <span>Desarrollo personalizado</span>
-            <span class="text-[#D6AF34]">·</span>
-            <span>Tecnología empresarial</span>
-          </div>
-
         </div>
 
-        <!-- Right Side: AI-Generated 3D Hero Architectural Asset -->
-        <div class="lg:col-span-6 relative">
-          <div class="relative rounded-2xl overflow-hidden border border-[#805C12]/40 shadow-2xl bg-[#1C1D19] group">
-            
-            <!-- Metallic Hairline Top Accent -->
-            <div class="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#F7DE7E] to-transparent z-20"></div>
-
-            <!-- The AI Generated 3D Composition -->
-            <div class="relative overflow-hidden aspect-[16/10] sm:aspect-[16/10]">
-              <img src="assets/hero-3d.jpg" alt="Cetu Studios 3D Technology Universe" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]">
-              
-              <!-- Soft Vignette & Dark Edge Blending -->
-              <div class="absolute inset-0 bg-gradient-to-t from-[#151613] via-transparent to-transparent opacity-80 pointer-events-none"></div>
-              <div class="absolute inset-0 bg-gradient-to-r from-[#151613]/50 via-transparent to-transparent pointer-events-none"></div>
-            </div>
-
-            <!-- Floating Architectural Badge -->
-            <div class="p-4 bg-[#1C1D19]/95 border-t border-[#805C12]/30 flex items-center justify-between font-mono text-xs">
-              <div class="flex items-center gap-2 text-[#FDFBF3]">
-                <span class="w-2 h-2 rounded-full bg-[#D6AF34]"></span>
-                <span>ARQUITECTURA DE SOFTWARE & HARDWARE CLOUD</span>
-              </div>
-              <span class="text-[#D6AF34] text-[11px]">SISTEMAS ROBUSTOS</span>
-            </div>
-
+        <div class="hero-visual">
+          <img src="assets/hero-3d.jpg" alt="Cetu Studios — Tecnología de alto nivel" class="hero-img">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span>Complejo por dentro. Simple por fuera.</span>
           </div>
+        </div>
 
-          <!-- Floating Accent Callout -->
-          <div class="hidden sm:flex absolute -bottom-5 -left-5 bg-[#1C1D19] border border-[#D6AF34]/40 px-4 py-3 rounded-lg shadow-2xl items-center gap-3 backdrop-blur-md">
-            <div class="w-8 h-8 rounded bg-[#805C12]/20 border border-[#D6AF34]/30 flex items-center justify-center text-[#D6AF34]">
-              <i data-lucide="shield-check" class="w-4 h-4"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SERVICIOS
+  ═══════════════════════════════════════════ -->
+  <section id="servicios" class="section">
+    <div class="container">
+
+      <div class="section-header">
+        <p class="section-label">Lo que hacemos</p>
+        <h2 class="section-title">Todo lo que tu negocio necesita, en un solo lugar.</h2>
+        <p class="section-desc">Desde tu presencia en internet hasta los sistemas internos que hacen funcionar tu empresa.</p>
+      </div>
+
+      <!-- Bento Grid de servicios -->
+      <div class="services-grid">
+
+        <!-- Grande: Desarrollo Web -->
+        <div class="service-card service-card--large">
+          <div class="service-card-content">
+            <span class="service-icon">🌐</span>
+            <h3 class="service-title">Páginas Web Profesionales</h3>
+            <p class="service-desc">Sitios web rápidos, modernos y diseñados para representar tu negocio con autoridad. Desde landing pages hasta sitios corporativos completos.</p>
+            <a href="#contacto" class="service-link">Quiero mi página web →</a>
+          </div>
+          <div class="service-card-img">
+            <img src="assets/texture-gold.jpg" alt="Desarrollo Web" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Ecommerce -->
+        <div class="service-card service-card--medium">
+          <div class="service-card-content">
+            <span class="service-icon">🛒</span>
+            <h3 class="service-title">Tiendas Online y Ecommerce</h3>
+            <p class="service-desc">Vende en línea con una tienda diseñada para convertir visitas en ventas. Con catálogos, carrito y pagos integrados.</p>
+            <a href="#contacto" class="service-link">Crear mi tienda →</a>
+          </div>
+          <div class="service-card-img">
+            <img src="assets/software-ecommerce.jpg" alt="Ecommerce" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Sistemas -->
+        <div class="service-card service-card--medium">
+          <div class="service-card-content">
+            <span class="service-icon">⚙️</span>
+            <h3 class="service-title">Sistemas Administrativos</h3>
+            <p class="service-desc">Plataformas para gestionar inventario, ventas, facturación y operaciones de tu empresa desde un solo panel.</p>
+            <a href="#contacto" class="service-link">Ver sistemas →</a>
+          </div>
+          <div class="service-card-img">
+            <img src="assets/software-erp.jpg" alt="Sistemas ERP" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Software -->
+        <div class="service-card service-card--medium">
+          <div class="service-card-content">
+            <span class="service-icon">💻</span>
+            <h3 class="service-title">Software Personalizado</h3>
+            <p class="service-desc">Cuando ninguna herramienta existente se adapta a tu negocio, creamos exactamente lo que necesitas.</p>
+            <a href="#contacto" class="service-link">Cotizar →</a>
+          </div>
+          <div class="service-card-img">
+            <img src="assets/software-custom.jpg" alt="Software Personalizado" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Automatización -->
+        <div class="service-card service-card--medium">
+          <div class="service-card-content">
+            <span class="service-icon">⚡</span>
+            <h3 class="service-title">Automatización de Procesos</h3>
+            <p class="service-desc">Elimina tareas repetitivas y conecta tus herramientas para que tu equipo trabaje más inteligente.</p>
+            <a href="#contacto" class="service-link">Automatizar →</a>
+          </div>
+          <div class="service-card-img">
+            <img src="assets/software-crm.jpg" alt="Automatización" loading="lazy">
+          </div>
+        </div>
+
+        <!-- CTA Card -->
+        <div class="service-card service-card--cta">
+          <p class="service-cta-label">¿No sabes qué necesitas?</p>
+          <h3 class="service-cta-title">Cuéntanos tu idea y te orientamos.</h3>
+          <a href="#contacto" class="btn-primary">Hablar con nosotros</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PROYECTOS
+  ═══════════════════════════════════════════ -->
+  <section id="proyectos" class="section section--alt">
+    <div class="container">
+
+      <div class="section-header">
+        <p class="section-label">Nuestro trabajo</p>
+        <h2 class="section-title">Proyectos que hablan por sí solos.</h2>
+        <p class="section-desc">Plataformas y sistemas desarrollados con estándares profesionales de ingeniería.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Proyecto 1 -->
+        <div class="project-card">
+          <div class="project-img-wrap">
+            <img src="assets/software-erp.jpg" alt="Sistema Administrativo ERP" class="project-img" loading="lazy">
+            <span class="project-badge">Sistema Empresarial</span>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Sistema Administrativo & Facturación</h3>
+            <p class="project-desc">Plataforma de gestión de inventario, ventas y facturación fiscal para empresas dominicanas. Control completo desde un solo panel.</p>
+            <div class="project-tags">
+              <span class="tag">Inventario</span>
+              <span class="tag">Facturación</span>
+              <span class="tag">Reportes</span>
             </div>
+            <a href="#contacto" class="project-link">Quiero algo similar →</a>
+          </div>
+        </div>
+
+        <!-- Proyecto 2 -->
+        <div class="project-card">
+          <div class="project-img-wrap">
+            <img src="assets/software-ecommerce.jpg" alt="Tienda Online Ecommerce" class="project-img" loading="lazy">
+            <span class="project-badge">Ecommerce</span>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Tienda Digital con Pagos Integrados</h3>
+            <p class="project-desc">Tienda online con catálogo de productos, carrito intuitivo e integración con pasarelas de pago locales e internacionales.</p>
+            <div class="project-tags">
+              <span class="tag">Tienda Online</span>
+              <span class="tag">Pagos</span>
+              <span class="tag">Catálogo</span>
+            </div>
+            <a href="#contacto" class="project-link">Quiero algo similar →</a>
+          </div>
+        </div>
+
+        <!-- Proyecto 3 -->
+        <div class="project-card">
+          <div class="project-img-wrap">
+            <img src="assets/software-inventory.jpg" alt="Control de Inventario" class="project-img" loading="lazy">
+            <span class="project-badge">Sistema de Inventario</span>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Control de Inventario y Stock</h3>
+            <p class="project-desc">Sistema para administrar productos, alertas de reabastecimiento y análisis de ventas por categoría en tiempo real.</p>
+            <div class="project-tags">
+              <span class="tag">Stock</span>
+              <span class="tag">Alertas</span>
+              <span class="tag">Analítica</span>
+            </div>
+            <a href="#contacto" class="project-link">Quiero algo similar →</a>
+          </div>
+        </div>
+
+        <!-- Proyecto 4 -->
+        <div class="project-card">
+          <div class="project-img-wrap">
+            <img src="assets/software-crm.jpg" alt="CRM y Gestión de Clientes" class="project-img" loading="lazy">
+            <span class="project-badge">CRM</span>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Gestión de Clientes y Ventas</h3>
+            <p class="project-desc">Plataforma para hacer seguimiento de oportunidades, cotizaciones y clientes. Historial completo y notificaciones automáticas por WhatsApp.</p>
+            <div class="project-tags">
+              <span class="tag">Clientes</span>
+              <span class="tag">Pipeline</span>
+              <span class="tag">WhatsApp</span>
+            </div>
+            <a href="#contacto" class="project-link">Quiero algo similar →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CÓMO TRABAJAMOS
+  ═══════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-header">
+        <p class="section-label">El proceso</p>
+        <h2 class="section-title">Así trabajamos contigo.</h2>
+        <p class="section-desc">Un proceso claro, sin sorpresas, desde la primera conversación hasta el lanzamiento.</p>
+      </div>
+
+      <div class="process-grid">
+
+        <div class="process-step">
+          <div class="process-number">01</div>
+          <h3 class="process-title">Conversamos sobre tu idea</h3>
+          <p class="process-desc">Nos cuentas qué necesitas, cuál es tu negocio y qué problema quieres resolver. Sin tecnicismos ni formularios complicados.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="process-number">02</div>
+          <h3 class="process-title">Diseñamos la solución</h3>
+          <p class="process-desc">Planificamos la estructura, las funcionalidades y el diseño antes de escribir una sola línea de código. Tú apruebas antes de continuar.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="process-number">03</div>
+          <h3 class="process-title">Desarrollamos el proyecto</h3>
+          <p class="process-desc">Construimos tu solución con atención al detalle. Te mostramos avances durante el proceso para que siempre sepas cómo va todo.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="process-number">04</div>
+          <h3 class="process-title">Lanzamos y entregamos</h3>
+          <p class="process-desc">Publicamos el proyecto y te acompañamos en el proceso de puesta en marcha para que todo funcione desde el primer día.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       NOSOTROS
+  ═══════════════════════════════════════════ -->
+  <section id="nosotros" class="section section--alt">
+    <div class="container">
+      <div class="about-layout">
+
+        <div class="about-content">
+          <p class="section-label">Quiénes somos</p>
+          <h2 class="about-title">
+            Somos Cetu Studios.
+          </h2>
+          <p class="about-desc">
+            Un estudio de desarrollo tecnológico basado en República Dominicana. Ayudamos a negocios, emprendedores y organizaciones a transformar sus ideas en productos digitales reales.
+          </p>
+          <p class="about-desc">
+            No somos una agencia genérica. Somos un equipo comprometido con entender tu negocio antes de escribir una sola línea de código.
+          </p>
+          <blockquote class="about-quote">
+            "Complejo por dentro. Simple por fuera."
+          </blockquote>
+          <p class="about-philosophy">
+            Creemos que la tecnología debe ser poderosa por dentro y fácil de usar por fuera. Cada proyecto que entregamos cumple ese principio.
+          </p>
+        </div>
+
+        <div class="about-values">
+          <div class="value-item">
+            <div class="value-icon">🎯</div>
             <div>
-              <div class="text-xs text-[#FDFBF3] font-medium font-sans">Ingeniería sin plantillas</div>
-              <div class="text-[10px] text-[#D6AF34] font-mono">Código limpio y estructurado</div>
+              <h4 class="value-title">Enfocados en resultados</h4>
+              <p class="value-desc">Cada decisión de diseño y desarrollo tiene un propósito claro para tu negocio.</p>
             </div>
           </div>
-
+          <div class="value-item">
+            <div class="value-icon">🤝</div>
+            <div>
+              <h4 class="value-title">Comunicación directa</h4>
+              <p class="value-desc">Trabajas directamente con quien desarrolla tu proyecto. Sin intermediarios.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🔧</div>
+            <div>
+              <h4 class="value-title">Soluciones a medida</h4>
+              <p class="value-desc">Tu negocio es único. Tu software también debería serlo.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">📈</div>
+            <div>
+              <h4 class="value-title">Pensando en el futuro</h4>
+              <p class="value-desc">Construimos plataformas que crecen con tu empresa, no que la limitan.</p>
+            </div>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- SECTION 2: SERVICES SECTION ("Soluciones digitales. Construidas a tu medida.") -->
-  <section id="servicios" class="py-24 bg-[#151613] relative border-t border-[#805C12]/30">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Editorial Section Header -->
-      <div class="max-w-3xl mb-16 space-y-4">
-        <div class="cetu-tag">
-          <span>SERVICIOS DE DESARROLLO</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#FDFBF3] tracking-tight leading-tight">
-          Soluciones digitales. Construidas a tu medida.
-        </h2>
-        <p class="text-base sm:text-lg text-[#F0E4C4] leading-relaxed">
-          Desarrollamos herramientas tecnológicas que se adaptan a las necesidades reales de cada negocio. Cada servicio cuenta con una dirección visual y funcional pensada para maximizar la eficiencia y rentabilidad.
-        </p>
-      </div>
+  <!-- ═══════════════════════════════════════════
+       CONTACTO
+  ═══════════════════════════════════════════ -->
+  <section id="contacto" class="section">
+    <div class="container">
 
-      <!-- 6 Differentiated Services Grid with AI Artwork & Interfaces -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Service 01: Desarrollo Web -->
-        <div class="surface-cetu-interactive flex flex-col justify-between overflow-hidden group">
-          <div class="p-6">
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-mono text-[#D6AF34]">01 // WEB ARCHITECTURE</span>
-              <div class="w-8 h-8 rounded bg-[#232520] border border-[#805C12]/40 flex items-center justify-center text-[#D6AF34]">
-                <i data-lucide="globe" class="w-4 h-4"></i>
+      <div class="contact-layout">
+
+        <div class="contact-info">
+          <p class="section-label">Hablemos</p>
+          <h2 class="contact-title">¿Tienes un proyecto en mente?</h2>
+          <p class="contact-desc">
+            Cuéntanos qué necesitas. Te respondemos en menos de 24 horas con una evaluación inicial y los próximos pasos.
+          </p>
+
+          <a href="https://wa.me/18090000000?text=Hola%20Cetu%20Studios,%20quiero%20conversar%20sobre%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Escríbenos por WhatsApp
+          </a>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <span class="contact-label">Correo</span>
+              <a href="mailto:proyectos@cetustudios.com" class="contact-value">proyectos@cetustudios.com</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Ubicación</span>
+              <span class="contact-value">República Dominicana · Proyectos globales</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <!-- Mensaje de éxito -->
+          <div id="form-success" class="form-success hidden">
+            <span class="success-icon">✓</span>
+            <div>
+              <strong>¡Mensaje enviado!</strong>
+              <p>Nos pondremos en contacto contigo pronto. También puedes escribirnos por WhatsApp para una respuesta inmediata.</p>
+            </div>
+            <a id="wa-forward" href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="margin-top:0.75rem;display:inline-flex">Enviar por WhatsApp también →</a>
+          </div>
+
+          <form id="contact-form" class="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="f-name">Tu nombre</label>
+                <input type="text" id="f-name" name="nombre" placeholder="Ej: María González" required>
+              </div>
+              <div class="form-field">
+                <label for="f-company">Tu empresa <span class="optional">(opcional)</span></label>
+                <input type="text" id="f-company" name="empresa" placeholder="Ej: Nova Retail">
               </div>
             </div>
-            <h3 class="text-xl font-medium text-[#FDFBF3] mb-2">Desarrollo Web</h3>
-            <p class="text-sm text-[#F0E4C4] leading-relaxed">
-              Sitios web profesionales, rápidos y diseñados para presentar tu negocio con autoridad, fortalecer tu presencia digital y convertir visitantes en oportunidades reales.
-            </p>
-          </div>
-
-          <!-- Visual Graphic Texture -->
-          <div class="relative h-44 overflow-hidden border-t border-[#805C12]/30 bg-[#11120F]">
-            <img src="assets/texture-gold.jpg" alt="Desarrollo Web Cetu" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#1C1D19] via-transparent to-transparent"></div>
-            <div class="absolute bottom-3 left-4 font-mono text-[11px] text-[#D6AF34] flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#D6AF34]"></span>
-              <span>100 Core Web Vitals · SEO Optimizado</span>
+            <div class="form-field">
+              <label for="f-email">Correo electrónico</label>
+              <input type="email" id="f-email" name="correo" placeholder="tu@correo.com" required>
             </div>
-          </div>
-        </div>
-
-        <!-- Service 02: Ecommerce -->
-        <div class="surface-cetu-interactive flex flex-col justify-between overflow-hidden group">
-          <div class="p-6">
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-mono text-[#D6AF34]">02 // LUXURY COMMERCE</span>
-              <div class="w-8 h-8 rounded bg-[#232520] border border-[#805C12]/40 flex items-center justify-center text-[#D6AF34]">
-                <i data-lucide="shopping-bag" class="w-4 h-4"></i>
-              </div>
+            <div class="form-field">
+              <label for="f-service">¿Qué necesitas?</label>
+              <select id="f-service" name="servicio">
+                <option value="">Selecciona una opción</option>
+                <option>Página web profesional</option>
+                <option>Tienda online / Ecommerce</option>
+                <option>Sistema administrativo</option>
+                <option>Sistema de inventario y ventas</option>
+                <option>Software personalizado</option>
+                <option>Aplicación web</option>
+                <option>Automatización de procesos</option>
+                <option>No sé, necesito orientación</option>
+              </select>
             </div>
-            <h3 class="text-xl font-medium text-[#FDFBF3] mb-2">Ecommerce</h3>
-            <p class="text-sm text-[#F0E4C4] leading-relaxed">
-              Tiendas online con catálogos fluidos, pedidos sincronizados, pasarelas locales e internacionales y experiencias de compra intuitivas orientadas a la venta.
-            </p>
-          </div>
-
-          <div class="relative h-44 overflow-hidden border-t border-[#805C12]/30 bg-[#11120F]">
-            <img src="assets/software-ecommerce.jpg" alt="Ecommerce Platform Mockup" class="w-full h-full object-cover object-top opacity-90 group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#1C1D19] via-transparent to-transparent"></div>
-            <div class="absolute bottom-3 left-4 font-mono text-[11px] text-[#F7DE7E] flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#D6AF34]"></span>
-              <span>Pasarelas Azul, Cardnet & Stripe</span>
+            <div class="form-field">
+              <label for="f-message">Cuéntanos tu idea</label>
+              <textarea id="f-message" name="mensaje" rows="4" placeholder="Describe brevemente tu proyecto o lo que quieres lograr..." required></textarea>
             </div>
-          </div>
-        </div>
-
-        <!-- Service 03: Sistemas Empresariales -->
-        <div class="surface-cetu-interactive flex flex-col justify-between overflow-hidden group">
-          <div class="p-6">
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-mono text-[#D6AF34]">03 // ENTERPRISE ERP</span>
-              <div class="w-8 h-8 rounded bg-[#232520] border border-[#805C12]/40 flex items-center justify-center text-[#D6AF34]">
-                <i data-lucide="layout-grid" class="w-4 h-4"></i>
-              </div>
-            </div>
-            <h3 class="text-xl font-medium text-[#FDFBF3] mb-2">Sistemas Empresariales</h3>
-            <p class="text-sm text-[#F0E4C4] leading-relaxed">
-              Herramientas integradas para administrar inventario, ventas, clientes y operaciones internas con trazabilidad completa y módulo fiscal compatible con la DGII.
-            </p>
-          </div>
-
-          <div class="relative h-44 overflow-hidden border-t border-[#805C12]/30 bg-[#11120F]">
-            <img src="assets/software-erp.jpg" alt="Sistema Administrativo ERP" class="w-full h-full object-cover object-top opacity-90 group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#1C1D19] via-transparent to-transparent"></div>
-            <div class="absolute bottom-3 left-4 font-mono text-[11px] text-[#D6AF34] flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#D6AF34]"></span>
-              <span>Facturación NCF Fiscal Automática</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Service 04: Software Personalizado -->
-        <div class="surface-cetu-interactive flex flex-col justify-between overflow-hidden group">
-          <div class="p-6">
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-mono text-[#D6AF34]">04 // BESPOKE SOFTWARE</span>
-              <div class="w-8 h-8 rounded bg-[#232520] border border-[#805C12]/40 flex items-center justify-center text-[#D6AF34]">
-                <i data-lucide="terminal" class="w-4 h-4"></i>
-              </div>
-            </div>
-            <h3 class="text-xl font-medium text-[#FDFBF3] mb-2">Software Personalizado</h3>
-            <p class="text-sm text-[#F0E4C4] leading-relaxed">
-              Aplicaciones y plataformas desarrolladas específicamente para cada necesidad corporativa, cuando las herramientas comerciales prefabricadas se quedan cortas.
-            </p>
-          </div>
-
-          <div class="relative h-44 overflow-hidden border-t border-[#805C12]/30 bg-[#11120F]">
-            <img src="assets/software-custom.jpg" alt="Software Personalizado" class="w-full h-full object-cover object-top opacity-90 group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#1C1D19] via-transparent to-transparent"></div>
-            <div class="absolute bottom-3 left-4 font-mono text-[11px] text-[#D6AF34] flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#D6AF34]"></span>
-              <span>Lógica Hecha a la Medida</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Service 05: Automatización -->
-        <div class="surface-cetu-interactive flex flex-col justify-between overflow-hidden group">
-          <div class="p-6">
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-mono text-[#D6AF34]">05 // AUTOMATION ENGINE</span>
-              <div class="w-8 h-8 rounded bg-[#232520] border border-[#805C12]/40 flex items-center justify-center text-[#D6AF34]">
-                <i data-lucide="zap" class="w-4 h-4"></i>
-              </div>
-            </div>
-            <h3 class="text-xl font-medium text-[#FDFBF3] mb-2">Automatización</h3>
-            <p class="text-sm text-[#F0E4C4] leading-relaxed">
-              Procesos digitales que reducen tareas manuales repetitivas, conectan plataformas inconexas y mejoran drásticamente la eficiencia operativa de tu equipo.
-            </p>
-          </div>
-
-          <div class="relative h-44 overflow-hidden border-t border-[#805C12]/30 bg-[#11120F]">
-            <img src="assets/software-crm.jpg" alt="Automatización de Flujos" class="w-full h-full object-cover object-center opacity-90 group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#1C1D19] via-transparent to-transparent"></div>
-            <div class="absolute bottom-3 left-4 font-mono text-[11px] text-[#D6AF34] flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#D6AF34]"></span>
-              <span>Webhooks & WhatsApp Cloud API</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Service 06: Aplicaciones Web -->
-        <div class="surface-cetu-interactive flex flex-col justify-between overflow-hidden group">
-          <div class="p-6">
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-mono text-[#D6AF34]">06 // CLOUD PLATFORMS</span>
-              <div class="w-8 h-8 rounded bg-[#232520] border border-[#805C12]/40 flex items-center justify-center text-[#D6AF34]">
-                <i data-lucide="layers" class="w-4 h-4"></i>
-              </div>
-            </div>
-            <h3 class="text-xl font-medium text-[#FDFBF3] mb-2">Aplicaciones Web</h3>
-            <p class="text-sm text-[#F0E4C4] leading-relaxed">
-              Productos digitales completos accesibles desde cualquier navegador moderno, con sincronización en la nube, permisos de usuario y alta disponibilidad.
-            </p>
-          </div>
-
-          <div class="relative h-44 overflow-hidden border-t border-[#805C12]/30 bg-[#11120F]">
-            <img src="assets/software-inventory.jpg" alt="Aplicaciones Web SaaS" class="w-full h-full object-cover object-top opacity-90 group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#1C1D19] via-transparent to-transparent"></div>
-            <div class="absolute bottom-3 left-4 font-mono text-[11px] text-[#D6AF34] flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#D6AF34]"></span>
-              <span>SaaS & Soluciones Cloud Escalables</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECTION 3: SOLUCIONES EMPRESARIALES ("Tu negocio necesita más que herramientas. Necesita soluciones.") -->
-  <section id="soluciones" class="py-24 bg-[#11120F] relative border-t border-[#805C12]/30">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="max-w-3xl mb-12 space-y-4">
-        <div class="cetu-tag">
-          <span>ARQUITECTURA DE NEGOCIO</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#FDFBF3] tracking-tight leading-tight">
-          Tu negocio necesita más que herramientas. Necesita soluciones.
-        </h2>
-        <p class="text-base sm:text-lg text-[#F0E4C4] leading-relaxed">
-          Diseñamos sistemas que resuelven problemas reales de gestión. Interfaces oscuras, tablas operativas claras, navegación intuitiva y módulos construidos para la dinámica comercial diaria.
-        </p>
-      </div>
-
-      <!-- Interactive Solution Tabs -->
-      <div class="flex flex-wrap gap-2 mb-10 pb-3 border-b border-[#805C12]/30">
-        <button data-solution="operaciones" class="solution-tab-btn px-4 py-2.5 text-xs font-mono rounded-md border border-[#D6AF34] bg-[#232520] text-[#FDFBF3] flex items-center gap-2 transition-all">
-          <i data-lucide="activity" class="w-3.5 h-3.5 text-[#D6AF34]"></i>
-          Control de Operaciones
-        </button>
-        <button data-solution="inventario" class="solution-tab-btn px-4 py-2.5 text-xs font-mono rounded-md border border-[#805C12]/30 bg-[#1C1D19] text-[#F0E4C4] flex items-center gap-2 hover:border-[#D6AF34]/60 transition-all">
-          <i data-lucide="package" class="w-3.5 h-3.5 text-[#D6AF34]"></i>
-          Administración de Inventario
-        </button>
-        <button data-solution="clientes" class="solution-tab-btn px-4 py-2.5 text-xs font-mono rounded-md border border-[#805C12]/30 bg-[#1C1D19] text-[#F0E4C4] flex items-center gap-2 hover:border-[#D6AF34]/60 transition-all">
-          <i data-lucide="users" class="w-3.5 h-3.5 text-[#D6AF34]"></i>
-          Gestión de Clientes y Ventas
-        </button>
-        <button data-solution="plataformas" class="solution-tab-btn px-4 py-2.5 text-xs font-mono rounded-md border border-[#805C12]/30 bg-[#1C1D19] text-[#F0E4C4] flex items-center gap-2 hover:border-[#D6AF34]/60 transition-all">
-          <i data-lucide="cpu" class="w-3.5 h-3.5 text-[#D6AF34]"></i>
-          Plataformas Personalizadas
-        </button>
-      </div>
-
-      <!-- Solution 1: Control de Operaciones -->
-      <div id="solution-operaciones" class="solution-content-panel grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div class="lg:col-span-5 space-y-6">
-          <div class="text-xs font-mono text-[#D6AF34]">SOLUCIÓN 01 // OPERACIONES & FISCALIDAD</div>
-          <h3 class="text-2xl sm:text-3xl font-medium text-[#FDFBF3] leading-snug">
-            Control de operaciones centralizado y auditoría fiscal continua.
-          </h3>
-          <p class="text-sm sm:text-base text-[#F0E4C4] leading-relaxed">
-            Elimina la fricción entre departamentos. Implementamos sistemas donde compras, ventas, despachos y contabilidad se comunican de forma automática con soporte para la DGII de República Dominicana.
-          </p>
-
-          <div class="space-y-3 pt-2">
-            <div class="flex items-start gap-3 text-sm text-[#F0E4C4]">
-              <i data-lucide="check-circle" class="w-4 h-4 text-[#D6AF34] shrink-0 mt-0.5"></i>
-              <span><strong>Facturación Fiscal DGII:</strong> Emisión de comprobantes NCF (B01, B02, B14, B15) con correlativo seguro.</span>
-            </div>
-            <div class="flex items-start gap-3 text-sm text-[#F0E4C4]">
-              <i data-lucide="check-circle" class="w-4 h-4 text-[#D6AF34] shrink-0 mt-0.5"></i>
-              <span><strong>Auditoría y Roles (RBAC):</strong> Permisos segmentados por cajero, supervisor y gerencia general.</span>
-            </div>
-            <div class="flex items-start gap-3 text-sm text-[#F0E4C4]">
-              <i data-lucide="check-circle" class="w-4 h-4 text-[#D6AF34] shrink-0 mt-0.5"></i>
-              <span><strong>Reportería Ejecutiva:</strong> Generación de formatos 606 y 607 listos para declaración jurada.</span>
-            </div>
-          </div>
-
-          <div class="pt-2">
-            <a href="#contacto" class="btn-gold-secondary text-xs">
-              Solicitar demostración de este sistema →
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:col-span-7">
-          <div class="rounded-xl overflow-hidden border border-[#805C12]/40 shadow-2xl bg-[#1C1D19] group">
-            <img src="assets/software-erp.jpg" alt="Control de Operaciones ERP" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500">
-            <div class="p-4 bg-[#1C1D19] border-t border-[#805C12]/30 flex items-center justify-between font-mono text-xs">
-              <span class="text-[#FDFBF3]">ERP_OPS // PANEL EJECUTIVO</span>
-              <span class="text-[#D6AF34]">DGII SYNC: OK</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Solution 2: Administración de Inventario -->
-      <div id="solution-inventario" class="solution-content-panel grid-cols-1 lg:grid-cols-12 gap-8 items-center hidden">
-        <div class="lg:col-span-5 space-y-6">
-          <div class="text-xs font-mono text-[#D6AF34]">SOLUCIÓN 02 // INVENTARIO & ALMACÉN</div>
-          <h3 class="text-2xl sm:text-3xl font-medium text-[#FDFBF3] leading-snug">
-            Visibilidad en tiempo real de cada artículo en almacén.
-          </h3>
-          <p class="text-sm sm:text-base text-[#F0E4C4] leading-relaxed">
-            Evita roturas de stock y sobrecostos por mercancía estancada. Nuestras plataformas calculan la velocidad de venta y generan órdenes de compra automáticas basadas en consumo histórico.
-          </p>
-
-          <div class="space-y-3 pt-2">
-            <div class="flex items-start gap-3 text-sm text-[#F0E4C4]">
-              <i data-lucide="check-circle" class="w-4 h-4 text-[#D6AF34] shrink-0 mt-0.5"></i>
-              <span><strong>Trazabilidad Multisucursal:</strong> Control de traslados entre múltiples depósitos físicos.</span>
-            </div>
-            <div class="flex items-start gap-3 text-sm text-[#F0E4C4]">
-              <i data-lucide="check-circle" class="w-4 h-4 text-[#D6AF34] shrink-0 mt-0.5"></i>
-              <span><strong>Alertas de Reabastecimiento:</strong> Notificaciones predictivas antes de que se agote un producto clave.</span>
-            </div>
-            <div class="flex items-start gap-3 text-sm text-[#F0E4C4]">
-              <i data-lucide="check-circle" class="w-4 h-4 text-[#D6AF34] shrink-0 mt-0.5"></i>
-              <span><strong>Valoración Contable:</strong> Costeo promedio ponderado y margen bruto por línea de producto.</span>
-            </div>
-          </div>
-
-          <div class="pt-2">
-            <a href="#contacto" class="btn-gold-secondary text-xs">
-              Optimizar mi inventario →
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:col-span-7">
-          <div class="rounded-xl overflow-hidden border border-[#805C12]/40 shadow-2xl bg-[#1C1D19] group">
-            <img src="assets/software-inventory.jpg" alt="Administración de Inventario" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500">
-            <div class="p-4 bg-[#1C1D19] border-t border-[#805C12]/30 flex items-center justify-between font-mono text-xs">
-              <span class="text-[#FDFBF3]">INVENTORY_OPS // VALUACIÓN ACTIVA</span>
-              <span class="text-[#F7DE7E]">ROTACIÓN: 6.8x</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Solution 3: Gestión de Clientes y Ventas -->
-      <div id="solution-clientes" class="solution-content-panel grid-cols-1 lg:grid-cols-12 gap-8 items-center hidden">
-        <div class="lg:col-span-5 space-y-6">
-          <div class="text-xs font-mono text-[#D6AF34]">SOLUCIÓN 03 // CRM & PIPELINE COMERCIAL</div>
-          <h3 class="text-2xl sm:text-3xl font-medium text-[#FDFBF3] leading-snug">
-            De prospecto a cliente leal, con seguimiento milimétrico.
-          </h3>
-          <p class="text-sm sm:text-base text-[#F0E4C4] leading-relaxed">
-            Centraliza los canales de contacto de tu negocio. Conecta el flujo de cotizaciones, WhatsApp Business API y recordatorios de cobro en un solo tablero con trazabilidad de cada interacción.
-          </p>
-
-          <div class="space-y-3 pt-2">
-            <div class="flex items-start gap-3 text-sm text-[#F0E4C4]">
-              <i data-lucide="check-circle" class="w-4 h-4 text-[#D6AF34] shrink-0 mt-0.5"></i>
-              <span><strong>Pipeline Visual Kanban:</strong> Control de cotizaciones en negociación, aprobadas y cobradas.</span>
-            </div>
-            <div class="flex items-start gap-3 text-sm text-[#F0E4C4]">
-              <i data-lucide="check-circle" class="w-4 h-4 text-[#D6AF34] shrink-0 mt-0.5"></i>
-              <span><strong>Historial Unificado:</strong> Facturas previas, notas internas y acuerdos de pago por cliente.</span>
-            </div>
-            <div class="flex items-start gap-3 text-sm text-[#F0E4C4]">
-              <i data-lucide="check-circle" class="w-4 h-4 text-[#D6AF34] shrink-0 mt-0.5"></i>
-              <span><strong>Disparo a WhatsApp:</strong> Envío inmediato de propuestas comerciales y estados de cuenta.</span>
-            </div>
-          </div>
-
-          <div class="pt-2">
-            <a href="#contacto" class="btn-gold-secondary text-xs">
-              Implementar CRM para mi equipo →
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:col-span-7">
-          <div class="rounded-xl overflow-hidden border border-[#805C12]/40 shadow-2xl bg-[#1C1D19] group">
-            <img src="assets/software-crm.jpg" alt="Gestión de Clientes CRM" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500">
-            <div class="p-4 bg-[#1C1D19] border-t border-[#805C12]/30 flex items-center justify-between font-mono text-xs">
-              <span class="text-[#FDFBF3]">CRM_PIPELINE // SEGUIMIENTO EN VIVO</span>
-              <span class="text-[#D6AF34]">WIN RATE: 78.5%</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Solution 4: Plataformas Personalizadas -->
-      <div id="solution-plataformas" class="solution-content-panel grid-cols-1 lg:grid-cols-12 gap-8 items-center hidden">
-        <div class="lg:col-span-5 space-y-6">
-          <div class="text-xs font-mono text-[#D6AF34]">SOLUCIÓN 04 // PLATAFORMAS A MEDIDA</div>
-          <h3 class="text-2xl sm:text-3xl font-medium text-[#FDFBF3] leading-snug">
-            Ingeniería de software adaptada a tu modelo de negocio único.
-          </h3>
-          <p class="text-sm sm:text-base text-[#F0E4C4] leading-relaxed">
-            Cuando las herramientas existentes en el mercado no son suficientes o limitan tu crecimiento, diseñamos y construimos una infraestructura propietaria, escalable y sin dependencias forzadas.
-          </p>
-
-          <div class="space-y-3 pt-2">
-            <div class="flex items-start gap-3 text-sm text-[#F0E4C4]">
-              <i data-lucide="check-circle" class="w-4 h-4 text-[#D6AF34] shrink-0 mt-0.5"></i>
-              <span><strong>Microservicios Modulares:</strong> Arquitectura cloud adaptable que crece sin reescribir código.</span>
-            </div>
-            <div class="flex items-start gap-3 text-sm text-[#F0E4C4]">
-              <i data-lucide="check-circle" class="w-4 h-4 text-[#D6AF34] shrink-0 mt-0.5"></i>
-              <span><strong>Conectores de API Propietarios:</strong> Integración con bancos, sistemas legacy y hardware local.</span>
-            </div>
-            <div class="flex items-start gap-3 text-sm text-[#F0E4C4]">
-              <i data-lucide="check-circle" class="w-4 h-4 text-[#D6AF34] shrink-0 mt-0.5"></i>
-              <span><strong>Propiedad Total del Código:</strong> Sin mensualidades ocultas por usuario ni licencias abusivas.</span>
-            </div>
-          </div>
-
-          <div class="pt-2">
-            <a href="#contacto" class="btn-gold-secondary text-xs">
-              Diseñar solución a la medida →
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:col-span-7">
-          <div class="rounded-xl overflow-hidden border border-[#805C12]/40 shadow-2xl bg-[#1C1D19] group">
-            <img src="assets/software-custom.jpg" alt="Plataforma de Software a la Medida" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500">
-            <div class="p-4 bg-[#1C1D19] border-t border-[#805C12]/30 flex items-center justify-between font-mono text-xs">
-              <span class="text-[#FDFBF3]">CUSTOM_ARCH // MICROSERVICES</span>
-              <span class="text-[#F7DE7E]">LATENCIA: 18ms</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECTION 4: METODOLOGÍA ("De una idea a una solución funcional.") -->
-  <section id="metodologia" class="py-24 bg-[#151613] relative border-t border-[#805C12]/30">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="max-w-3xl mb-16 space-y-4">
-        <div class="cetu-tag">
-          <span>PROCESO DE INGENIERÍA</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#FDFBF3] tracking-tight leading-tight">
-          De una idea a una solución funcional.
-        </h2>
-        <p class="text-base sm:text-lg text-[#F0E4C4] leading-relaxed">
-          Un proceso estructurado, transparente y enfocado en entregar valor desde la primera iteración, con entregables claros y cero ambigüedades técnicas.
-        </p>
-      </div>
-
-      <!-- 4 Process Step Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-        
-        <div data-step="01" class="process-card-step surface-cetu rounded-xl p-6 border border-[#D6AF34] bg-[#232520] cursor-pointer transition-all">
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-2xl font-bold font-mono text-[#FDFBF3]">01</span>
-            <span class="w-2 h-2 rounded-full bg-[#D6AF34]"></span>
-          </div>
-          <h3 class="text-base font-medium text-[#FDFBF3] mb-1.5">Descubrimiento</h3>
-          <p class="text-xs text-[#F0E4C4] leading-relaxed">
-            Entendemos tu negocio, tus objetivos y los problemas que necesitas resolver.
-          </p>
-        </div>
-
-        <div data-step="02" class="process-card-step surface-cetu rounded-xl p-6 border border-[#805C12]/30 bg-[#1C1D19] cursor-pointer transition-all hover:border-[#D6AF34]/50">
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-2xl font-bold font-mono text-[#FDFBF3]">02</span>
-            <span class="w-2 h-2 rounded-full bg-[#805C12]"></span>
-          </div>
-          <h3 class="text-base font-medium text-[#FDFBF3] mb-1.5">Planificación y diseño</h3>
-          <p class="text-xs text-[#F0E4C4] leading-relaxed">
-            Definimos la estructura, las funcionalidades y la experiencia del producto.
-          </p>
-        </div>
-
-        <div data-step="03" class="process-card-step surface-cetu rounded-xl p-6 border border-[#805C12]/30 bg-[#1C1D19] cursor-pointer transition-all hover:border-[#D6AF34]/50">
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-2xl font-bold font-mono text-[#FDFBF3]">03</span>
-            <span class="w-2 h-2 rounded-full bg-[#805C12]"></span>
-          </div>
-          <h3 class="text-base font-medium text-[#FDFBF3] mb-1.5">Desarrollo y pruebas</h3>
-          <p class="text-xs text-[#F0E4C4] leading-relaxed">
-            Construimos, integramos y probamos cada parte de la solución con rigor.
-          </p>
-        </div>
-
-        <div data-step="04" class="process-card-step surface-cetu rounded-xl p-6 border border-[#805C12]/30 bg-[#1C1D19] cursor-pointer transition-all hover:border-[#D6AF34]/50">
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-2xl font-bold font-mono text-[#FDFBF3]">04</span>
-            <span class="w-2 h-2 rounded-full bg-[#805C12]"></span>
-          </div>
-          <h3 class="text-base font-medium text-[#FDFBF3] mb-1.5">Lanzamiento</h3>
-          <p class="text-xs text-[#F0E4C4] leading-relaxed">
-            Publicamos el proyecto y verificamos que todo funcione en producción.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- Active Process Inspector -->
-      <div class="surface-cetu rounded-xl p-6 sm:p-8 border border-[#805C12]/35 bg-[#1C1D19]">
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#805C12]/30 pb-4 mb-4">
-          <h3 id="method-active-title" class="text-lg font-medium text-[#FDFBF3] font-mono">
-            01. Descubrimiento e Inmersión Estratégica
-          </h3>
-          <span class="text-xs font-mono text-[#D6AF34]">FASE PREPARATORIA OBLIGATORIA</span>
-        </div>
-        <p id="method-active-desc" class="text-sm text-[#F0E4C4] leading-relaxed mb-6">
-          Analizamos detenidamente la operación de tu empresa, los flujos de trabajo actuales, los cuellos de botella y los objetivos comerciales para diseñar una arquitectura tecnológica sin fisuras.
-        </p>
-        <div>
-          <div class="text-xs font-mono text-[#D6AF34] uppercase tracking-wider mb-3">Entregables de esta etapa:</div>
-          <div id="method-active-deliverables" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div class="flex items-center gap-2 text-xs font-mono text-[#F0E4C4]">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#D6AF34]"></span>
-              <span>Mapeo de Procesos Operativos</span>
-            </div>
-            <div class="flex items-center gap-2 text-xs font-mono text-[#F0E4C4]">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#D6AF34]"></span>
-              <span>Matriz de Requerimientos Técnicos</span>
-            </div>
-            <div class="flex items-center gap-2 text-xs font-mono text-[#F0E4C4]">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#D6AF34]"></span>
-              <span>Definición de Arquitectura Cloud</span>
-            </div>
-            <div class="flex items-center gap-2 text-xs font-mono text-[#F0E4C4]">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#D6AF34]"></span>
-              <span>Cronograma y Alcance Ejecutivo</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECTION 5: PORTAFOLIO ("Nuestro trabajo habla por nosotros.") -->
-  <section id="portafolio" class="py-24 bg-[#11120F] relative border-t border-[#805C12]/30">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header & Filter Controls -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-        <div class="max-w-2xl space-y-3">
-          <div class="cetu-tag">
-            <span>PROYECTOS & ARQUITECTURAS</span>
-          </div>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#FDFBF3] tracking-tight leading-tight">
-            Nuestro trabajo habla por nosotros.
-          </h2>
-          <p class="text-base text-[#F0E4C4] leading-relaxed">
-            Plataformas reales y arquitecturas de demostración técnica desarrolladas con estándares de ingeniería de software de primer nivel.
-          </p>
-        </div>
-
-        <!-- Category Filters -->
-        <div class="flex flex-wrap gap-2">
-          <button data-filter="all" class="portfolio-filter-btn px-3.5 py-1.5 text-xs font-mono rounded-md bg-[#D6AF34] text-[#151613] border border-[#F7DE7E] font-semibold transition-all">
-            Todos
-          </button>
-          <button data-filter="erp" class="portfolio-filter-btn px-3.5 py-1.5 text-xs font-mono rounded-md bg-[#1C1D19] text-[#F0E4C4] border border-[#805C12]/40 hover:border-[#D6AF34] transition-all">
-            Sistemas & ERP
-          </button>
-          <button data-filter="ecommerce" class="portfolio-filter-btn px-3.5 py-1.5 text-xs font-mono rounded-md bg-[#1C1D19] text-[#F0E4C4] border border-[#805C12]/40 hover:border-[#D6AF34] transition-all">
-            Ecommerce
-          </button>
-          <button data-filter="auto" class="portfolio-filter-btn px-3.5 py-1.5 text-xs font-mono rounded-md bg-[#1C1D19] text-[#F0E4C4] border border-[#805C12]/40 hover:border-[#D6AF34] transition-all">
-            Automatización
-          </button>
-        </div>
-      </div>
-
-      <!-- Portfolio Projects Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        <!-- Project 1: Aurora Enterprise -->
-        <div data-category="erp" class="portfolio-item surface-cetu-interactive flex flex-col justify-between overflow-hidden group">
-          <div class="relative aspect-video overflow-hidden border-b border-[#805C12]/30 bg-[#151613]">
-            <img src="assets/software-erp.jpg" alt="Aurora Enterprise ERP" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#1C1D19] via-transparent to-transparent opacity-80"></div>
-            <div class="absolute top-3 right-3 px-2.5 py-1 rounded bg-[#151613]/80 border border-[#805C12]/50 text-[10px] font-mono text-[#D6AF34] backdrop-blur-md">
-              PROYECTO DEMOSTRATIVO
-            </div>
-          </div>
-
-          <div class="p-6 space-y-4">
-            <div class="text-xs font-mono text-[#D6AF34]">SISTEMAS EMPRESARIALES / ERP FISCAL</div>
-            <h3 class="text-xl font-medium text-[#FDFBF3]">Aurora Enterprise — Sistema Administrativo & NCF</h3>
-            <p class="text-sm text-[#F0E4C4] leading-relaxed">
-              Plataforma para gestión de compras, inventario multisucursal y facturación fiscal DGII en tiempo real con alta disponibilidad.
-            </p>
-            <div class="flex flex-wrap gap-2 pt-1">
-              <span class="text-xs font-mono px-2.5 py-1 rounded bg-[#151613] text-[#F7DE7E] border border-[#805C12]/30">Next.js 15</span>
-              <span class="text-xs font-mono px-2.5 py-1 rounded bg-[#151613] text-[#F7DE7E] border border-[#805C12]/30">PostgreSQL</span>
-              <span class="text-xs font-mono px-2.5 py-1 rounded bg-[#151613] text-[#F7DE7E] border border-[#805C12]/30">DGII NCF Engine</span>
-            </div>
-          </div>
-
-          <div class="p-4 bg-[#151613] border-t border-[#805C12]/30 flex items-center justify-between">
-            <span class="text-xs font-mono text-[#F0E4C4]/60">Arquitectura Verificada</span>
-            <button data-project="aurora-erp" class="open-modal-btn text-xs font-mono text-[#D6AF34] hover:text-[#F7DE7E] flex items-center gap-1">
-              Ver detalles de arquitectura <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            <button type="submit" class="btn-primary btn-full" id="form-submit">
+              Enviar mensaje
             </button>
-          </div>
-        </div>
-
-        <!-- Project 2: Aurum Commerce -->
-        <div data-category="ecommerce" class="portfolio-item surface-cetu-interactive flex flex-col justify-between overflow-hidden group">
-          <div class="relative aspect-video overflow-hidden border-b border-[#805C12]/30 bg-[#151613]">
-            <img src="assets/software-ecommerce.jpg" alt="Aurum Luxury Commerce" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#1C1D19] via-transparent to-transparent opacity-80"></div>
-            <div class="absolute top-3 right-3 px-2.5 py-1 rounded bg-[#151613]/80 border border-[#805C12]/50 text-[10px] font-mono text-[#D6AF34] backdrop-blur-md">
-              PROYECTO DEMOSTRATIVO
-            </div>
-          </div>
-
-          <div class="p-6 space-y-4">
-            <div class="text-xs font-mono text-[#D6AF34]">ECOMMERCE & RETAIL PREMIUM</div>
-            <h3 class="text-xl font-medium text-[#FDFBF3]">Aurum — Tienda Digital Headless con Pasarelas RD</h3>
-            <p class="text-sm text-[#F0E4C4] leading-relaxed">
-              Tienda online con checkout en 1 paso, integración nativa con Azul Dominicana, Cardnet y Stripe, y tiempos de carga menores a 0.7s.
-            </p>
-            <div class="flex flex-wrap gap-2 pt-1">
-              <span class="text-xs font-mono px-2.5 py-1 rounded bg-[#151613] text-[#F7DE7E] border border-[#805C12]/30">React Headless</span>
-              <span class="text-xs font-mono px-2.5 py-1 rounded bg-[#151613] text-[#F7DE7E] border border-[#805C12]/30">Azul & Cardnet API</span>
-              <span class="text-xs font-mono px-2.5 py-1 rounded bg-[#151613] text-[#F7DE7E] border border-[#805C12]/30">Stripe</span>
-            </div>
-          </div>
-
-          <div class="p-4 bg-[#151613] border-t border-[#805C12]/30 flex items-center justify-between">
-            <span class="text-xs font-mono text-[#F0E4C4]/60">Ultra-Low Latency</span>
-            <button data-project="aurum-commerce" class="open-modal-btn text-xs font-mono text-[#D6AF34] hover:text-[#F7DE7E] flex items-center gap-1">
-              Ver detalles de arquitectura <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- Project 3: Nexus Inventory -->
-        <div data-category="erp" class="portfolio-item surface-cetu-interactive flex flex-col justify-between overflow-hidden group">
-          <div class="relative aspect-video overflow-hidden border-b border-[#805C12]/30 bg-[#151613]">
-            <img src="assets/software-inventory.jpg" alt="Nexus Inventory" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#1C1D19] via-transparent to-transparent opacity-80"></div>
-            <div class="absolute top-3 right-3 px-2.5 py-1 rounded bg-[#151613]/80 border border-[#805C12]/50 text-[10px] font-mono text-[#D6AF34] backdrop-blur-md">
-              PROYECTO DEMOSTRATIVO
-            </div>
-          </div>
-
-          <div class="p-6 space-y-4">
-            <div class="text-xs font-mono text-[#D6AF34]">INVENTARIO & ANALÍTICA DE VENTAS</div>
-            <h3 class="text-xl font-medium text-[#FDFBF3]">Nexus Inventory — Control de Stock & Demanda</h3>
-            <p class="text-sm text-[#F0E4C4] leading-relaxed">
-              Software para almacenes logísticos con control por número de serie, alertas de merma y proyecciones automáticas de reorden.
-            </p>
-            <div class="flex flex-wrap gap-2 pt-1">
-              <span class="text-xs font-mono px-2.5 py-1 rounded bg-[#151613] text-[#F7DE7E] border border-[#805C12]/30">TypeScript</span>
-              <span class="text-xs font-mono px-2.5 py-1 rounded bg-[#151613] text-[#F7DE7E] border border-[#805C12]/30">PostgreSQL</span>
-              <span class="text-xs font-mono px-2.5 py-1 rounded bg-[#151613] text-[#F7DE7E] border border-[#805C12]/30">Chart.js</span>
-            </div>
-          </div>
-
-          <div class="p-4 bg-[#151613] border-t border-[#805C12]/30 flex items-center justify-between">
-            <span class="text-xs font-mono text-[#F0E4C4]/60">Trazabilidad Total</span>
-            <button data-project="nexus-inventory" class="open-modal-btn text-xs font-mono text-[#D6AF34] hover:text-[#F7DE7E] flex items-center gap-1">
-              Ver detalles de arquitectura <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- Project 4: SyncFlow Core -->
-        <div data-category="auto" class="portfolio-item surface-cetu-interactive flex flex-col justify-between overflow-hidden group">
-          <div class="relative aspect-video overflow-hidden border-b border-[#805C12]/30 bg-[#151613]">
-            <img src="assets/software-custom.jpg" alt="SyncFlow Core" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#1C1D19] via-transparent to-transparent opacity-80"></div>
-            <div class="absolute top-3 right-3 px-2.5 py-1 rounded bg-[#151613]/80 border border-[#805C12]/50 text-[10px] font-mono text-[#D6AF34] backdrop-blur-md">
-              PROYECTO DEMOSTRATIVO
-            </div>
-          </div>
-
-          <div class="p-6 space-y-4">
-            <div class="text-xs font-mono text-[#D6AF34]">AUTOMATIZACIÓN & INTEGRACIONES</div>
-            <h3 class="text-xl font-medium text-[#FDFBF3]">SyncFlow Core — Motor de Webhooks & WhatsApp API</h3>
-            <p class="text-sm text-[#F0E4C4] leading-relaxed">
-              Infraestructura que conecta eventos de pago con confirmaciones automáticas de WhatsApp Cloud API y sincronización contable instantánea.
-            </p>
-            <div class="flex flex-wrap gap-2 pt-1">
-              <span class="text-xs font-mono px-2.5 py-1 rounded bg-[#151613] text-[#F7DE7E] border border-[#805C12]/30">Node.js</span>
-              <span class="text-xs font-mono px-2.5 py-1 rounded bg-[#151613] text-[#F7DE7E] border border-[#805C12]/30">WhatsApp Cloud API</span>
-              <span class="text-xs font-mono px-2.5 py-1 rounded bg-[#151613] text-[#F7DE7E] border border-[#805C12]/30">BullMQ</span>
-            </div>
-          </div>
-
-          <div class="p-4 bg-[#151613] border-t border-[#805C12]/30 flex items-center justify-between">
-            <span class="text-xs font-mono text-[#F0E4C4]/60">0% Event Drop</span>
-            <button data-project="syncflow-auto" class="open-modal-btn text-xs font-mono text-[#D6AF34] hover:text-[#F7DE7E] flex items-center gap-1">
-              Ver detalles de arquitectura <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-            </button>
-          </div>
+            <p class="form-note">Tu información es confidencial. No compartimos tus datos con nadie.</p>
+          </form>
         </div>
 
       </div>
-
     </div>
   </section>
 
-  <!-- SECTION 6: DIFERENCIACIÓN ("Complejo por dentro. Simple por fuera.") -->
-  <section id="diferencia" class="py-24 bg-[#151613] relative border-t border-[#805C12]/30">
-    <!-- Center Glow -->
-    <div class="absolute inset-0 gold-glow-center pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      
-      <!-- Section Header -->
-      <div class="max-w-3xl mb-16 space-y-4">
-        <div class="cetu-tag">
-          <span>FILOSOFÍA DE MARCA</span>
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/cetu-navbar-logo.png" alt="Cetu Studios" height="34" class="footer-logo">
+          <p class="footer-tagline">Complejo por dentro. Simple por fuera.</p>
+          <p class="footer-location">República Dominicana · Proyectos para todo el mundo</p>
         </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#FDFBF3] tracking-tight leading-tight">
-          Complejo por dentro. <br>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FDFBF3] via-[#F7DE7E] to-[#D6AF34]">
-            Simple por fuera.
-          </span>
-        </h2>
-        <p class="text-base sm:text-lg text-[#F0E4C4] leading-relaxed">
-          Nuestros principios de desarrollo garantizan que los desafíos técnicos más complejos se traduzcan en experiencias limpias, rápidas y rentables para tu negocio.
-        </p>
-      </div>
 
-      <!-- 5 Principles Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <div class="surface-cetu p-8 space-y-4 border border-[#805C12]/35">
-          <div class="w-10 h-10 rounded bg-[#232520] border border-[#805C12]/50 flex items-center justify-center text-[#D6AF34]">
-            <i data-lucide="target" class="w-5 h-5"></i>
+        <div class="footer-nav">
+          <div class="footer-col">
+            <span class="footer-col-title">Navegación</span>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
           </div>
-          <h3 class="text-xl font-medium text-[#FDFBF3]">Tecnología pensada para resolver problemas</h3>
-          <p class="text-sm text-[#F0E4C4] leading-relaxed">
-            No desarrollamos funciones por capricho ni añadimos complejidad innecesaria. Cada línea de código debe tener un propósito medible que ahorre tiempo o genere ingresos.
-          </p>
-        </div>
-
-        <div class="surface-cetu p-8 space-y-4 border border-[#805C12]/35">
-          <div class="w-10 h-10 rounded bg-[#232520] border border-[#805C12]/50 flex items-center justify-center text-[#D6AF34]">
-            <i data-lucide="sparkles" class="w-5 h-5"></i>
+          <div class="footer-col">
+            <span class="footer-col-title">Servicios</span>
+            <a href="#servicios">Páginas web</a>
+            <a href="#servicios">Tiendas online</a>
+            <a href="#servicios">Sistemas empresariales</a>
+            <a href="#servicios">Software personalizado</a>
+            <a href="#servicios">Automatización</a>
           </div>
-          <h3 class="text-xl font-medium text-[#FDFBF3]">Diseño centrado en las personas</h3>
-          <p class="text-sm text-[#F0E4C4] leading-relaxed">
-            El mejor software es el que no requiere manuales extensos. Creamos interfaces intuitivas que tu equipo adopta con entusiasmo desde el primer día de uso.
-          </p>
-        </div>
-
-        <div class="surface-cetu p-8 space-y-4 border border-[#805C12]/35">
-          <div class="w-10 h-10 rounded bg-[#232520] border border-[#805C12]/50 flex items-center justify-center text-[#D6AF34]">
-            <i data-lucide="sliders" class="w-5 h-5"></i>
-          </div>
-          <h3 class="text-xl font-medium text-[#FDFBF3]">Soluciones adaptadas a cada negocio</h3>
-          <p class="text-sm text-[#F0E4C4] leading-relaxed">
-            Cada empresa tiene una lógica propia que representa su ventaja competitiva. Nuestro software se amolda a tus procesos, nunca al revés.
-          </p>
-        </div>
-
-        <div class="surface-cetu p-8 space-y-4 border border-[#805C12]/35">
-          <div class="w-10 h-10 rounded bg-[#232520] border border-[#805C12]/50 flex items-center justify-center text-[#D6AF34]">
-            <i data-lucide="trending-up" class="w-5 h-5"></i>
-          </div>
-          <h3 class="text-xl font-medium text-[#FDFBF3]">Desarrollo orientado a resultados</h3>
-          <p class="text-sm text-[#F0E4C4] leading-relaxed">
-            Priorizamos la velocidad de carga, la estabilidad y la conversión comercial. Tu inversión en tecnología debe generar retorno tangible desde su puesta en marcha.
-          </p>
-        </div>
-
-        <div class="surface-cetu p-8 space-y-4 border border-[#805C12]/35 md:col-span-2 lg:col-span-2">
-          <div class="w-10 h-10 rounded bg-[#232520] border border-[#805C12]/50 flex items-center justify-center text-[#D6AF34]">
-            <i data-lucide="user-check" class="w-5 h-5"></i>
-          </div>
-          <h3 class="text-xl font-medium text-[#FDFBF3]">Atención personalizada y acompañamiento técnico</h3>
-          <p class="text-sm text-[#F0E4C4] leading-relaxed">
-            Sin intermediarios ni cadenas burocráticas. Trabajas directamente con ingenieros de software senior comprometidos con la evolución a largo plazo de tu plataforma.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECTION 7: CONTACTO Y CONVERSIÓN ("Construyamos algo extraordinario.") -->
-  <section id="contacto" class="py-24 bg-[#11120F] relative border-t border-[#805C12]/30">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        
-        <!-- Left: Briefing Info & WhatsApp Direct -->
-        <div class="lg:col-span-5 space-y-6">
-          <div class="cetu-tag">
-            <span>INICIAR PROYECTO</span>
-          </div>
-
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#FDFBF3] tracking-tight leading-tight">
-            Construyamos algo extraordinario.
-          </h2>
-
-          <p class="text-base text-[#F0E4C4] leading-relaxed">
-            Cuéntanos qué necesitas desarrollar y encontremos la mejor manera de convertirlo en una solución digital. Evaluamos los requerimientos y te respondemos en menos de 24 horas laborables.
-          </p>
-
-          <div class="pt-6 space-y-4 border-t border-[#805C12]/30 text-sm">
-            <div class="flex items-start gap-3">
-              <div class="w-8 h-8 rounded bg-[#1C1D19] border border-[#805C12]/40 flex items-center justify-center text-[#D6AF34] shrink-0 mt-0.5">
-                <i data-lucide="message-square" class="w-4 h-4"></i>
-              </div>
-              <div>
-                <div class="text-xs font-mono text-[#D6AF34]">WHATSAPP DIRECTO</div>
-                <a href="https://wa.me/18090000000?text=Hola%20Cetu%20Studios,%20quiero%20cotizar%20un%20proyecto%20tecnologico" target="_blank" rel="noopener noreferrer" class="text-white hover:text-[#D6AF34] transition-colors font-medium">
-                  +1 (809) 000-0000
-                </a>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-3">
-              <div class="w-8 h-8 rounded bg-[#1C1D19] border border-[#805C12]/40 flex items-center justify-center text-[#D6AF34] shrink-0 mt-0.5">
-                <i data-lucide="mail" class="w-4 h-4"></i>
-              </div>
-              <div>
-                <div class="text-xs font-mono text-[#D6AF34]">CORREO ELECTRÓNICO</div>
-                <a href="mailto:proyectos@cetustudios.com" class="text-white hover:text-[#D6AF34] transition-colors font-medium">
-                  proyectos@cetustudios.com
-                </a>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-3">
-              <div class="w-8 h-8 rounded bg-[#1C1D19] border border-[#805C12]/40 flex items-center justify-center text-[#D6AF34] shrink-0 mt-0.5">
-                <i data-lucide="map-pin" class="w-4 h-4"></i>
-              </div>
-              <div>
-                <div class="text-xs font-mono text-[#D6AF34]">UBICACIÓN</div>
-                <div class="text-white">República Dominicana · Servicios para LATAM & Global</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Official Contact Form -->
-        <div class="lg:col-span-7">
-          <div class="surface-cetu p-6 sm:p-8 border border-[#805C12]/40 shadow-2xl bg-[#1C1D19]">
-            
-            <!-- Success Confirmation Box -->
-            <div id="contact-success-box" class="hidden mb-6 p-4 rounded-lg bg-[#232520] border border-[#D6AF34] text-xs font-mono space-y-2">
-              <div class="flex items-center gap-2 text-[#F7DE7E] font-bold">
-                <i data-lucide="check-circle" class="w-4 h-4 text-[#D6AF34]"></i>
-                <span>¡Propuesta registrada con éxito!</span>
-              </div>
-              <p class="text-[#F0E4C4]">
-                Hemos recibido los detalles de tu solicitud. Si deseas una respuesta inmediata, haz clic abajo para enviar esta misma información a WhatsApp:
-              </p>
-              <div class="pt-1">
-                <a id="whatsapp-forward-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-gold-secondary py-1.5 px-3 inline-flex items-center gap-1.5 text-xs text-[#D6AF34]">
-                  <i data-lucide="send" class="w-3.5 h-3.5"></i>
-                  Enviar copia por WhatsApp ahora
-                </a>
-              </div>
-            </div>
-
-            <form id="cetu-contact-form" class="space-y-4">
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label for="form-name" class="block text-xs font-mono text-[#FDFBF3] mb-1.5">Nombre completo *</label>
-                  <input type="text" id="form-name" required placeholder="Ej: Marcos Almonte" class="cetu-input">
-                </div>
-
-                <div>
-                  <label for="form-company" class="block text-xs font-mono text-[#FDFBF3] mb-1.5">Empresa u Organización</label>
-                  <input type="text" id="form-company" placeholder="Ej: Nova Retail SRL" class="cetu-input">
-                </div>
-              </div>
-
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label for="form-email" class="block text-xs font-mono text-[#FDFBF3] mb-1.5">Correo electrónico *</label>
-                  <input type="email" id="form-email" required placeholder="tu@empresa.com" class="cetu-input">
-                </div>
-
-                <div>
-                  <label for="form-type" class="block text-xs font-mono text-[#FDFBF3] mb-1.5">Tipo de proyecto *</label>
-                  <select id="form-type" class="cetu-input text-sm">
-                    <option value="Diseño y desarrollo web">Diseño y desarrollo web</option>
-                    <option value="Tienda online / Ecommerce">Tienda online / Ecommerce</option>
-                    <option value="Sistema administrativo / ERP" selected>Sistema administrativo / ERP</option>
-                    <option value="Sistema de inventario y ventas">Sistema de inventario y ventas</option>
-                    <option value="Software empresarial personalizado">Software empresarial personalizado</option>
-                    <option value="Aplicación web">Aplicación web</option>
-                    <option value="Automatización de procesos">Automatización de procesos</option>
-                    <option value="Otro requerimiento">Otro requerimiento</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label for="form-budget" class="block text-xs font-mono text-[#FDFBF3] mb-1.5">Presupuesto aproximado (USD) *</label>
-                <select id="form-budget" class="cetu-input text-sm">
-                  <option value="< $2,000 USD">&lt; $2,000 USD</option>
-                  <option value="$2,000 - $5,000 USD" selected>$2,000 - $5,000 USD</option>
-                  <option value="$5,000 - $10,000 USD">$5,000 - $10,000 USD</option>
-                  <option value="$10,000+ USD">$10,000+ USD</option>
-                </select>
-              </div>
-
-              <div>
-                <label for="form-desc" class="block text-xs font-mono text-[#FDFBF3] mb-1.5">Descripción del proyecto *</label>
-                <textarea id="form-desc" rows="4" required placeholder="Cuéntanos brevemente qué necesitas desarrollar, qué procesos buscas resolver y qué funcionalidades principales tienes en mente..." class="cetu-input resize-none"></textarea>
-              </div>
-
-              <div class="pt-2">
-                <button type="submit" id="contact-submit-btn" class="btn-gold-primary w-full py-3.5">
-                  <span>Enviar propuesta</span>
-                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </button>
-              </div>
-
-              <div class="text-[11px] font-mono text-[#F0E4C4]/60 text-center">
-                Mantenemos estricta confidencialidad sobre la información técnica y comercial de tu proyecto.
-              </div>
-            </form>
-
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECTION 8: FOOTER OFICIAL -->
-  <footer class="bg-[#11120F] border-t border-[#805C12]/30 pt-16 pb-12 text-sm text-[#F0E4C4]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 mb-12">
-        
-        <!-- Brand Info Column with Official Emblem -->
-        <div class="lg:col-span-5 space-y-4">
-          <div class="flex items-center gap-3">
-            <img src="assets/cetu-navbar-logo.png" alt="Cetu Studios" class="h-9 w-auto object-contain">
-          </div>
-
-          <p class="text-sm text-[#F0E4C4] leading-relaxed max-w-sm">
-            Construimos tecnología que impulsa negocios. Soluciones digitales diseñadas para operar con máxima precisión y robustez.
-          </p>
-
-          <div class="text-xs font-mono text-[#D6AF34] font-semibold tracking-wider">
-            COMPLEJO POR DENTRO. SIMPLE POR FUERA.
-          </div>
-
-          <div class="text-xs font-mono text-[#F0E4C4]/70 pt-2 flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-[#D6AF34]"></span>
-            <span>República Dominicana · Cobertura Internacional</span>
-          </div>
-        </div>
-
-        <!-- Navigation Links -->
-        <div class="lg:col-span-2 space-y-3">
-          <div class="text-xs font-mono text-[#D6AF34] uppercase tracking-wider">Navegación</div>
-          <ul class="space-y-2 text-xs">
-            <li><a href="#inicio" class="hover:text-[#FDFBF3] transition-colors">Inicio</a></li>
-            <li><a href="#servicios" class="hover:text-[#FDFBF3] transition-colors">Servicios</a></li>
-            <li><a href="#soluciones" class="hover:text-[#FDFBF3] transition-colors">Soluciones</a></li>
-            <li><a href="#metodologia" class="hover:text-[#FDFBF3] transition-colors">Metodología</a></li>
-            <li><a href="#portafolio" class="hover:text-[#FDFBF3] transition-colors">Proyectos</a></li>
-            <li><a href="#diferencia" class="hover:text-[#FDFBF3] transition-colors">Nosotros</a></li>
-          </ul>
-        </div>
-
-        <!-- Services Links -->
-        <div class="lg:col-span-3 space-y-3">
-          <div class="text-xs font-mono text-[#D6AF34] uppercase tracking-wider">Servicios</div>
-          <ul class="space-y-2 text-xs">
-            <li><a href="#servicios" class="hover:text-[#FDFBF3] transition-colors">Desarrollo Web</a></li>
-            <li><a href="#servicios" class="hover:text-[#FDFBF3] transition-colors">Ecommerce & Tiendas</a></li>
-            <li><a href="#servicios" class="hover:text-[#FDFBF3] transition-colors">Sistemas Empresariales</a></li>
-            <li><a href="#servicios" class="hover:text-[#FDFBF3] transition-colors">Software Personalizado</a></li>
-            <li><a href="#servicios" class="hover:text-[#FDFBF3] transition-colors">Automatización de Procesos</a></li>
-            <li><a href="#servicios" class="hover:text-[#FDFBF3] transition-colors">Aplicaciones Web Cloud</a></li>
-          </ul>
-        </div>
-
-        <!-- System & Status Column -->
-        <div class="lg:col-span-2 space-y-3">
-          <div class="text-xs font-mono text-[#D6AF34] uppercase tracking-wider">Estándares</div>
-          <div class="p-3 bg-[#1C1D19] border border-[#805C12]/40 rounded-lg space-y-2 text-xs font-mono">
-            <div class="text-[#FDFBF3]">Arquitectura:</div>
-            <div class="text-[#D6AF34] font-semibold flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#D6AF34]"></span>
-              <span>CLOUD NATIVE</span>
-            </div>
-            <div class="text-[10px] text-[#F0E4C4]/60">Seguridad & Rendimiento</div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Bottom Bar -->
-      <div class="pt-8 border-t border-[#805C12]/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#F0E4C4]/70">
-        <div>
-          © 2026 Cetu Studios. República Dominicana. Todos los derechos reservados.
-        </div>
-        <div>
-          <a href="#inicio" class="hover:text-[#D6AF34] transition-colors">Volver arriba ↑</a>
         </div>
       </div>
 
+      <div class="footer-bottom">
+        <span>© 2026 Cetu Studios. Todos los derechos reservados.</span>
+        <a href="#inicio" class="footer-top-link">Volver arriba ↑</a>
+      </div>
     </div>
   </footer>
 
-  <!-- INTERACTIVE PROJECT ARCHITECTURE MODAL -->
-  <div id="project-modal" class="cetu-modal-backdrop fixed inset-0 z-50 hidden items-center justify-center p-4">
-    <div class="surface-cetu rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-[#805C12]/50 shadow-2xl relative bg-[#1C1D19]">
-      
-      <!-- Modal Header -->
-      <div class="p-6 border-b border-[#805C12]/30 flex items-center justify-between">
-        <div>
-          <span id="modal-category" class="text-xs font-mono text-[#D6AF34]">CATEGORÍA</span>
-          <h3 id="modal-title" class="text-xl font-medium text-[#FDFBF3] mt-1">Título del Proyecto</h3>
-        </div>
-        <button id="modal-close-btn" class="p-2 rounded-lg bg-[#232520] border border-[#805C12]/40 text-[#F0E4C4] hover:text-[#D6AF34] transition-colors" aria-label="Cerrar modal">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-      </div>
-
-      <!-- Modal Body -->
-      <div class="p-6 space-y-6">
-        <!-- Image Preview -->
-        <div class="rounded-lg overflow-hidden border border-[#805C12]/30 bg-[#151613]">
-          <img id="modal-image" src="" alt="Vista previa del proyecto" class="w-full h-auto object-cover max-h-64">
-        </div>
-
-        <p id="modal-desc" class="text-sm text-[#F0E4C4] leading-relaxed">
-          Descripción del proyecto...
-        </p>
-
-        <!-- Tech Stack -->
-        <div>
-          <label class="block text-xs font-mono text-[#D6AF34] uppercase mb-2">Stack Tecnológico</label>
-          <div id="modal-stack" class="flex flex-wrap gap-2"></div>
-        </div>
-
-        <!-- Key Features -->
-        <div>
-          <label class="block text-xs font-mono text-[#D6AF34] uppercase mb-2">Capacidades Principales</label>
-          <ul id="modal-features" class="space-y-2"></ul>
-        </div>
-      </div>
-
-      <!-- Modal Footer -->
-      <div class="p-6 bg-[#151613] border-t border-[#805C12]/30 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <span class="text-xs font-mono text-[#F0E4C4]/60">¿Necesitas una solución similar?</span>
-        <a href="#contacto" onclick="document.getElementById('project-modal').classList.add('hidden')" class="btn-gold-primary py-2 px-4 text-xs w-full sm:w-auto text-center">
-          Cotizar arquitectura similar →
-        </a>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Scripts -->
   <script src="app.js"></script>
 </body>
 </html>
