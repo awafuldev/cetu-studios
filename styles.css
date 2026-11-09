@@ -461,6 +461,31 @@ body.menu-open {
   box-shadow: 0 6px 20px -4px rgba(37, 211, 102, 0.3);
 }
 
+/* Instagram sidebar button */
+.btn-ig-sidebar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(225, 48, 108, 0.08);
+  border: 1px solid rgba(225, 48, 108, 0.35);
+  color: #f472b6;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  transition: all var(--ease-smooth);
+  text-decoration: none;
+}
+.btn-ig-sidebar:hover {
+  background: rgba(225, 48, 108, 0.18);
+  border-color: #E1306C;
+  color: #fba8c4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px -4px rgba(225, 48, 108, 0.3);
+}
+
 .sidebar-contact-info {
   display: flex;
   flex-direction: column;
@@ -2219,9 +2244,9 @@ body.menu-open {
 
 .conversion-cards-row {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  max-width: 860px;
+  max-width: 1100px;
   margin: 0 auto 32px;
 }
 
@@ -2248,6 +2273,41 @@ body.menu-open {
   height: 32px;
   color: var(--dorado-oscuro);
   flex-shrink: 0;
+}
+
+/* Instagram contact card icon */
+.icon-ig-box {
+  width: 32px;
+  height: 32px;
+  color: #E1306C;
+  flex-shrink: 0;
+}
+
+/* Instagram contact card */
+.ig-action-box {
+  border-top: 3px solid #E1306C;
+}
+
+/* Instagram contact card button */
+.btn-ig-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #833AB4, #E1306C, #F77737);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  padding: 14px 24px;
+  border-radius: var(--radius-pill);
+  transition: all var(--ease-smooth);
+  text-decoration: none;
+}
+.btn-ig-solid:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -4px rgba(225, 48, 108, 0.45);
 }
 
 .btn-email-solid {
@@ -2420,6 +2480,24 @@ body.menu-open {
 }
 
 .btn-whatsapp-footer:hover { background: rgba(37, 211, 102, 0.22); }
+
+/* Instagram — footer button */
+.btn-ig-footer {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #E1306C;
+  background: rgba(225, 48, 108, 0.1);
+  border: 1px solid rgba(225, 48, 108, 0.3);
+  padding: 7px 14px;
+  border-radius: var(--radius-pill);
+  margin-top: 6px;
+  transition: background var(--ease-smooth);
+}
+.btn-ig-footer:hover { background: rgba(225, 48, 108, 0.2); }
 
 .footer-bottom-row {
   display: flex;
