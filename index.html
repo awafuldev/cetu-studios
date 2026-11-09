@@ -37,7 +37,6 @@
     <header id="navbar" class="pill-navbar">
       <a href="#inicio" class="nav-brand" aria-label="Cetu Studios">
         <img src="assets/cetu-crown-gold.png" alt="Cetu Studios Logo" class="brand-crown">
-        <span class="brand-wordmark">CETU <strong>STUDIOS</strong></span>
       </a>
 
       <nav class="nav-menu" id="nav-menu">
@@ -61,24 +60,75 @@
       </div>
     </header>
 
-    <!-- Mobile Drawer Menu -->
-    <div id="mobile-drawer" class="mobile-drawer">
-      <div class="mobile-drawer-inner">
-        <a href="#inicio" class="mobile-link">Inicio</a>
-        <a href="#servicios" class="mobile-link">Servicios</a>
-        <a href="#proyectos" class="mobile-link">Proyectos</a>
-        <a href="#proceso" class="mobile-link">Proceso</a>
-        <a href="#nosotros" class="mobile-link">Nosotros</a>
-        <a href="#contacto" class="mobile-link">Contacto</a>
-        <div class="mobile-cta-wrap">
-          <a href="#contacto" class="btn-gold-main w-full">Hablemos de tu idea</a>
-          <a href="https://wa.me/18090000000?text=Hola%20Cetu%20Studios,%20quiero%20conversar%20sobre%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-outline w-full">
+    <!-- Mobile Sidebar Overlay & Drawer -->
+    <div id="mobile-backdrop" class="mobile-backdrop"></div>
+    <aside id="mobile-drawer" class="mobile-sidebar" aria-label="Menú de navegación móvil">
+      <div class="sidebar-header">
+        <div class="sidebar-brand">
+          <img src="assets/cetu-crown-gold.png" alt="Cetu Studios" class="sidebar-crown">
+          <span class="sidebar-wordmark">CETU <strong>STUDIOS</strong></span>
+        </div>
+        <button id="sidebar-close" class="btn-sidebar-close" aria-label="Cerrar menú">
+          <i data-lucide="x" class="icon-close"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#inicio" class="sidebar-link active">
+          <span class="link-num">01</span>
+          <span class="link-label">Inicio</span>
+          <i data-lucide="chevron-right" class="link-arrow"></i>
+        </a>
+        <a href="#servicios" class="sidebar-link">
+          <span class="link-num">02</span>
+          <span class="link-label">Servicios</span>
+          <i data-lucide="chevron-right" class="link-arrow"></i>
+        </a>
+        <a href="#proyectos" class="sidebar-link">
+          <span class="link-num">03</span>
+          <span class="link-label">Proyectos</span>
+          <i data-lucide="chevron-right" class="link-arrow"></i>
+        </a>
+        <a href="#proceso" class="sidebar-link">
+          <span class="link-num">04</span>
+          <span class="link-label">Proceso</span>
+          <i data-lucide="chevron-right" class="link-arrow"></i>
+        </a>
+        <a href="#nosotros" class="sidebar-link">
+          <span class="link-num">05</span>
+          <span class="link-label">Nosotros</span>
+          <i data-lucide="chevron-right" class="link-arrow"></i>
+        </a>
+        <a href="#contacto" class="sidebar-link">
+          <span class="link-num">06</span>
+          <span class="link-label">Contacto</span>
+          <i data-lucide="chevron-right" class="link-arrow"></i>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-status">
+          <span class="status-pulse-dot"></span>
+          <span>Disponible para proyectos</span>
+        </div>
+        
+        <div class="sidebar-cta-group">
+          <a href="#contacto" class="btn-gold-main w-full">
+            <span>Hablemos de tu idea</span>
+            <i data-lucide="arrow-right" class="icon-sm"></i>
+          </a>
+          <a href="https://wa.me/18090000000?text=Hola%20Cetu%20Studios,%20quiero%20conversar%20sobre%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-sidebar w-full">
             <i data-lucide="message-circle" class="icon-sm"></i>
             <span>WhatsApp directo</span>
           </a>
         </div>
+
+        <div class="sidebar-contact-info">
+          <a href="mailto:proyectos@cetustudios.com" class="sidebar-email">proyectos@cetustudios.com</a>
+          <span class="sidebar-location">Santo Domingo, República Dominicana</span>
+        </div>
       </div>
-    </div>
+    </aside>
   </div>
 
   <!-- ══════════════════════════════════════════════
