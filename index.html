@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Cetu Studios — Tu negocio merece una mejor presencia digital">
   <meta property="og:description" content="Webs, tiendas online y sistemas hechos para tu negocio. Complejo por dentro. Simple por fuera.">
-  <meta property="og:image" content="assets/hero-new.jpg">
+  <meta property="og:image" content="assets/hero-panoramic.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/cetu-emblem-gold.png">
@@ -81,16 +81,20 @@
   </div>
 
   <!-- ══════════════════════════════════════════════
-       SECTION 1: HERO (Impacto inmediato y visual)
+       SECTION 1: HERO PANORÁMICO (Estilo Frandhy Joyería)
   ══════════════════════════════════════════════ -->
-  <section id="inicio" class="hero-section">
-    <div class="hero-bg-glow"></div>
+  <section id="inicio" class="hero-panoramic-section">
+    <!-- Panoramic Edge-to-Edge Background Image -->
+    <div class="hero-panoramic-bg">
+      <img src="assets/hero-panoramic.jpg" alt="Cetu Studios — Soluciones Digitales y Software" class="hero-bg-cover">
+      <div class="hero-panoramic-gradient"></div>
+    </div>
 
-    <div class="container">
-      <div class="hero-fullwidth-content">
+    <div class="container hero-content-relative">
+      <div class="hero-panoramic-grid">
         
-        <!-- Hero Text Centered -->
-        <div class="hero-intro-center">
+        <!-- Left Column: Copy & Actions Superpuestos -->
+        <div class="hero-text-col">
           <div class="badge-tag">
             <span class="badge-dot"></span>
             <span>Estudio de Desarrollo Digital · RD</span>
@@ -105,13 +109,13 @@
           </p>
 
           <div class="hero-buttons">
-            <a href="#servicios" class="btn-gold-main">
+            <a href="#contacto" class="btn-gold-main">
+              <span>Hablemos de tu idea</span>
+              <i data-lucide="arrow-right" class="icon-sm"></i>
+            </a>
+            <a href="#servicios" class="btn-secondary-light">
               <span>Explorar servicios</span>
               <i data-lucide="arrow-down" class="icon-sm"></i>
-            </a>
-            <a href="#proyectos" class="btn-secondary-light">
-              <span>Ver nuestros proyectos</span>
-              <i data-lucide="arrow-right" class="icon-sm"></i>
             </a>
           </div>
 
@@ -131,20 +135,14 @@
           </div>
         </div>
 
-        <!-- Full-Width Showcase Photo with Floating Crown -->
-        <div class="hero-showcase-fullwidth">
-          <div class="showcase-banner-frame">
-            <img src="assets/hero-connected.jpg" alt="Soluciones digitales conectadas para tu negocio - Cetu Studios" class="showcase-banner-img">
-            <div class="showcase-banner-overlay"></div>
-            
-            <!-- Floating Crown in the Center -->
-            <div class="showcase-crown-centerpiece floating-element">
-              <div class="crown-glow-ring"></div>
-              <img src="assets/cetu-crown-gold.png" alt="Corona Cetu Studios" class="showcase-crown-img">
-              <div class="crown-caption-pill">
-                <span class="pulse-dot"></span>
-                <span>Complejo por dentro. Simple por fuera.</span>
-              </div>
+        <!-- Right Column: Logo Nuevo Flotante Superpuesto -->
+        <div class="hero-floating-col">
+          <div class="hero-floating-emblem floating-element">
+            <div class="emblem-glow"></div>
+            <img src="assets/cetu-crown-gold.png" alt="Corona Cetu Studios" class="floating-crown-graphic">
+            <div class="emblem-card-pill">
+              <span class="pulse-dot"></span>
+              <span>Complejo por dentro. Simple por fuera.</span>
             </div>
           </div>
         </div>
