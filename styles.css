@@ -508,17 +508,23 @@ button {
   width: 100%;
   border-radius: 20px;
   border: 1px solid var(--borde-dorado-sutil);
-  box-shadow: 0 24px 60px -10px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(214, 175, 52, 0.15);
+  box-shadow: 0 24px 60px -10px rgba(0, 0, 0, 0.75), 0 0 35px -5px rgba(214, 175, 52, 0.2);
   display: block;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .floating-element {
-  animation: floatSlow 6s ease-in-out infinite;
+  animation: floatLevitate 5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  will-change: transform;
 }
 
-@keyframes floatSlow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+@keyframes floatLevitate {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
 }
 
 .float-card {
@@ -530,6 +536,7 @@ button {
   border-radius: var(--radius-md);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
   padding: 12px 18px;
+  will-change: transform;
 }
 
 .float-card-top {
@@ -538,6 +545,7 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
+  animation: floatSubtleTop 4.2s ease-in-out infinite alternate;
 }
 
 .float-icon-gold {
@@ -565,9 +573,20 @@ button {
   opacity: 0.8;
 }
 
+@keyframes floatSubtleTop {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-8px); }
+}
+
 .float-card-bottom {
   bottom: -16px;
   left: 20px;
+  animation: floatSubtleBottom 4.6s ease-in-out infinite alternate;
+}
+
+@keyframes floatSubtleBottom {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(8px); }
 }
 
 .float-badge-status {
