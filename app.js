@@ -83,7 +83,63 @@
     });
   }
 
-  // 3. Smooth Anchor Scrolling
+  // 3. Smooth Anchor Scrolling & Active Nav Highlighting
+  const desktopNavItems = document.querySelectorAll('.nav-menu .nav-item');
+  const allSections = document.querySelectorAll('section[id]');
+
+  function setActiveNav(targetHref) {
+    if (!targetHref) return;
+    desktopNavItems.forEach(item => {
+      if (item.getAttribute('href') === targetHref) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
+
+    if (sidebarLinks && sidebarLinks.length > 0) {
+      sidebarLinks.forEach(link => {
+        if (link.getAttribute('href') === targetHref) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+  }
+
+  // Click handler for desktop nav items
+  desktopNavItems.forEach(item => {
+    item.addEventListener('click', function () {
+      const targetHref = this.getAttribute('href');
+      setActiveNav(targetHref);
+    });
+  });
+
+  // Scroll spy to update active nav state based on scroll position
+  function updateActiveNavOnScroll() {
+    handleNavScroll();
+
+    const scrollY = window.pageYOffset;
+    let currentId = '';
+
+    allSections.forEach(section => {
+      const sectionTop = section.offsetTop - 140;
+      const sectionHeight = section.offsetHeight;
+      const id = section.getAttribute('id');
+
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        currentId = id;
+      }
+    });
+
+    if (currentId) {
+      setActiveNav('#' + currentId);
+    }
+  }
+
+  window.addEventListener('scroll', updateActiveNavOnScroll, { passive: true });
+
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
@@ -94,6 +150,8 @@
         const headerOffset = 80;
         const elementPosition = targetElement.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        setActiveNav(targetId);
 
         window.scrollTo({
           top: offsetPosition,
