@@ -515,8 +515,8 @@ body.menu-open {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: rgba(21, 22, 19, 0.85);
-  border: 1px solid rgba(214, 175, 52, 0.35);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
   color: var(--crema);
   font-family: var(--font-display);
   font-weight: 600;
@@ -524,13 +524,14 @@ body.menu-open {
   padding: 14px 28px;
   border-radius: var(--radius-pill);
   transition: all var(--ease-smooth);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  letter-spacing: 0.01em;
 }
 
 .btn-dark-outline:hover {
-  background: rgba(214, 175, 52, 0.12);
-  border-color: var(--dorado);
+  background: rgba(214, 175, 52, 0.14);
+  border-color: rgba(214, 175, 52, 0.6);
   color: var(--dorado-palido);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px -4px rgba(214, 175, 52, 0.25);
@@ -668,12 +669,12 @@ body.menu-open {
 .hero-panoramic-section {
   position: relative;
   width: 100%;
-  min-height: 94vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 135px 0 90px;
+  padding: 100px 0 80px;
   overflow: hidden;
-  background: var(--fondo-oscuro);
+  background: #0a0900;
 }
 
 .hero-panoramic-bg {
@@ -689,27 +690,28 @@ body.menu-open {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: right center;
-  transform: scale(1.02);
+  object-position: center center;
+  transform: scale(1.0);
 }
 
 .hero-panoramic-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, 
-    #151613 0%, 
-    #151613 44%, 
-    rgba(21, 22, 19, 0.96) 50%, 
-    rgba(21, 22, 19, 0.55) 58%, 
-    rgba(21, 22, 19, 0.12) 66%, 
-    transparent 74%
-  ),
-  linear-gradient(180deg, 
-    rgba(21, 22, 19, 0.88) 0%, 
-    transparent 16%, 
-    transparent 84%, 
-    #151613 100%
-  );
+  background: 
+    linear-gradient(90deg,
+      rgba(5, 4, 0, 0.99) 0%,
+      rgba(5, 4, 0, 0.98) 22%,
+      rgba(5, 4, 0, 0.92) 38%,
+      rgba(5, 4, 0, 0.55) 52%,
+      rgba(5, 4, 0, 0.12) 65%,
+      transparent 76%
+    ),
+    linear-gradient(180deg,
+      rgba(5, 4, 0, 0.72) 0%,
+      rgba(5, 4, 0, 0.18) 20%,
+      transparent 65%,
+      rgba(5, 4, 0, 0.90) 100%
+    );
   pointer-events: none;
 }
 
@@ -2649,17 +2651,22 @@ body.menu-open {
     padding: 110px 0 60px;
   }
   .hero-panoramic-bg {
-    opacity: 0.55;
+    opacity: 0.60;
   }
   .hero-bg-cover {
-    object-position: 78% center;
+    object-position: 68% center;
   }
   .hero-panoramic-gradient {
-    background: linear-gradient(180deg, 
-      rgba(21, 22, 19, 0.96) 0%, 
-      rgba(21, 22, 19, 0.92) 50%, 
-      #151613 100%
-    );
+    background: 
+      linear-gradient(180deg, 
+        rgba(10, 9, 0, 0.72) 0%, 
+        rgba(10, 9, 0, 0.60) 50%, 
+        rgba(10, 9, 0, 0.82) 100%
+      ),
+      linear-gradient(90deg,
+        rgba(10, 9, 0, 0.55) 0%,
+        transparent 100%
+      );
   }
   .hero-panoramic-grid {
     grid-template-columns: 1fr;
