@@ -187,11 +187,6 @@
           </div>
         </div>
 
-        <!-- Composición Visual Derecha: Laptop, Smartphone y Escenario Comercial -->
-        <div class="hero-visual-showcase-space" aria-hidden="true">
-          <!-- The high-resolution 16:9 photographic scene shines cleanly through the background -->
-        </div>
-
       </div>
     </div>
   </section>
@@ -786,111 +781,67 @@
   </section>
 
   <!-- ══════════════════════════════════════════════
-       SECTION 6: CONTACTO & CONVERSIÓN (Directo, WhatsApp 1-Click)
+       SECTION 6: CONTACTO & CONVERSIÓN (Directo WhatsApp y Correo)
   ══════════════════════════════════════════════ -->
   <section id="contacto" class="section-light">
     <div class="container">
       
       <div class="conversion-box">
-        <div class="conversion-grid">
-          
-          <!-- Left: WhatsApp & Direct Contact -->
-          <div class="conversion-info-col">
-            <span class="pill-category">Comencemos</span>
-            <h2 class="title-dark">¿Listo para impulsar tu negocio?</h2>
-            
-            <p class="subtitle-dark">
-              Cuéntanos tu idea. Te responderemos hoy mismo con una orientación clara y sin compromiso.
+        <div class="conversion-header-centered">
+          <span class="pill-category">Comencemos</span>
+          <h2 class="title-dark">¿Listo para impulsar tu negocio?</h2>
+          <p class="subtitle-dark">
+            Cuéntanos tu idea. Te responderemos hoy mismo con una orientación clara y sin compromiso.
+          </p>
+        </div>
+
+        <div class="conversion-cards-row">
+          <!-- WhatsApp Card -->
+          <div class="wa-action-box conversion-direct-card">
+            <div class="wa-action-header">
+              <i data-lucide="message-circle" class="icon-wa"></i>
+              <div>
+                <div class="wa-action-title">Atención por WhatsApp</div>
+                <div class="wa-action-status">Respuesta inmediata</div>
+              </div>
+            </div>
+            <p class="wa-action-desc">
+              La forma más rápida de conversar sobre tu proyecto y cotizar directamente.
             </p>
-
-            <!-- 1-Click WhatsApp Card -->
-            <div class="wa-action-box">
-              <div class="wa-action-header">
-                <i data-lucide="message-circle" class="icon-wa"></i>
-                <div>
-                  <div class="wa-action-title">Atención por WhatsApp</div>
-                  <div class="wa-action-status">Respuesta inmediata</div>
-                </div>
-              </div>
-              <p class="wa-action-desc">
-                La forma más rápida de conversar sobre tu proyecto.
-              </p>
-              <a href="https://wa.me/18090000000?text=Hola%20Cetu%20Studios,%20quiero%20cotizar%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-solid">
-                <i data-lucide="send" class="icon-xs"></i>
-                <span>Chatear por WhatsApp ahora</span>
-              </a>
-            </div>
-
-            <div class="conversion-meta">
-              <div class="meta-row">
-                <i data-lucide="mail" class="icon-xs text-gold"></i>
-                <a href="mailto:proyectos@cetustudios.com">proyectos@cetustudios.com</a>
-              </div>
-              <div class="meta-row">
-                <i data-lucide="map-pin" class="icon-xs text-gold"></i>
-                <span>República Dominicana · Servicios globales</span>
-              </div>
-            </div>
+            <a href="https://wa.me/18090000000?text=Hola%20Cetu%20Studios,%20quiero%20cotizar%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-solid">
+              <i data-lucide="send" class="icon-xs"></i>
+              <span>Chatear por WhatsApp ahora</span>
+            </a>
           </div>
 
-          <!-- Right: Simplified 3-Field Conversion Form -->
-          <div class="conversion-form-col">
-            <h3 class="form-title">Envíanos un mensaje rápido</h3>
-            <p class="form-desc">Completa los datos y te contactaremos en minutos.</p>
-
-            <div id="contact-success" class="contact-success-box hidden">
-              <div class="success-icon-wrap">
-                <i data-lucide="check" class="icon-success"></i>
+          <!-- Email Direct Card -->
+          <div class="email-action-box conversion-direct-card">
+            <div class="wa-action-header">
+              <i data-lucide="mail" class="icon-mail-box"></i>
+              <div>
+                <div class="wa-action-title">Correo Electrónico</div>
+                <div class="wa-action-status">Propuestas y requerimientos</div>
               </div>
-              <h4 class="success-title">¡Mensaje recibido!</h4>
-              <p class="success-desc">Nos pondremos en contacto contigo de inmediato.</p>
-              <a id="wa-copy-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-gold-main btn-sm mt-3">
-                <span>Continuar en WhatsApp</span>
-                <i data-lucide="arrow-right" class="icon-xs"></i>
-              </a>
             </div>
-
-            <form id="contact-form" class="direct-form">
-              <div class="form-group">
-                <label for="form-name">Tu nombre *</label>
-                <input type="text" id="form-name" required placeholder="Ej: Marcos Almonte">
-              </div>
-
-              <div class="form-group">
-                <label for="form-contact">Teléfono / WhatsApp o Correo *</label>
-                <input type="text" id="form-contact" required placeholder="Ej: (809) 000-0000 o tu@correo.com">
-              </div>
-
-              <div class="form-group">
-                <label for="form-service">¿Qué necesitas? *</label>
-                <select id="form-service" required>
-                  <option value="" disabled selected>Selecciona tu requerimiento</option>
-                  <option value="Página web profesional">Página web profesional</option>
-                  <option value="Tienda online / Ecommerce">Tienda online / Ecommerce</option>
-                  <option value="Sistema administrativo e inventario">Sistema administrativo e inventario</option>
-                  <option value="Software personalizado">Software personalizado a la medida</option>
-                  <option value="Automatización de procesos">Automatización de procesos</option>
-                  <option value="Otro requerimiento">Otro requerimiento</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="form-message">Breve descripción de tu idea *</label>
-                <textarea id="form-message" rows="3" required placeholder="¿Qué tipo de negocio tienes y qué deseas lograr?"></textarea>
-              </div>
-
-              <button type="submit" id="submit-btn" class="btn-gold-main w-full py-3">
-                <span>Enviar solicitud</span>
-                <i data-lucide="arrow-right" class="icon-sm"></i>
-              </button>
-
-              <div class="privacy-note">
-                <i data-lucide="lock" class="icon-tiny"></i>
-                <span>Tus datos son 100% confidenciales.</span>
-              </div>
-            </form>
+            <p class="wa-action-desc">
+              Envíanos los detalles o requisitos de tu proyecto directamente a nuestra bandeja.
+            </p>
+            <a href="mailto:proyectos@cetustudios.com?subject=Cotización%20de%20Proyecto%20-%20Cetu%20Studios" class="btn-email-solid">
+              <i data-lucide="arrow-right" class="icon-xs"></i>
+              <span>proyectos@cetustudios.com</span>
+            </a>
           </div>
+        </div>
 
+        <div class="conversion-bottom-meta">
+          <div class="meta-row">
+            <i data-lucide="map-pin" class="icon-xs text-gold"></i>
+            <span>República Dominicana · Servicios globales</span>
+          </div>
+          <div class="meta-row">
+            <i data-lucide="clock" class="icon-xs text-gold"></i>
+            <span>Lunes a Sábado · 8:00 AM - 7:00 PM</span>
+          </div>
         </div>
       </div>
 
