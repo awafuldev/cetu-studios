@@ -3,510 +3,721 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cetu Studios — Desarrollo Web y Software Empresarial</title>
-  <meta name="description" content="Transformamos ideas en soluciones digitales. Diseñamos y desarrollamos páginas web, sistemas y software personalizado para ayudar a los negocios a crecer.">
+  <title>Cetu Studios — Construimos Soluciones Digitales</title>
+  <meta name="description" content="Desde páginas web hasta sistemas y software personalizado, desarrollamos herramientas digitales que ayudan a los negocios a crecer y trabajar mejor.">
   <meta name="author" content="Cetu Studios">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Cetu Studios — Desarrollo Web y Software Empresarial">
-  <meta property="og:description" content="Transformamos ideas en soluciones digitales. Páginas web, ecommerce, sistemas y software a medida.">
-  <meta property="og:image" content="assets/hero-3d.jpg">
+  <meta property="og:title" content="Cetu Studios — Soluciones Digitales para Negocios">
+  <meta property="og:description" content="Construimos soluciones digitales para llevar tus ideas más lejos. Complejo por dentro. Simple por fuera.">
+  <meta property="og:image" content="assets/hero-illustration.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/cetu-emblem-gold.png">
   <link rel="apple-touch-icon" href="assets/cetu-emblem-gold.png">
 
-  <!-- Fonts -->
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Stylesheet -->
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Official Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════════
-       NAVEGACIÓN
-  ═══════════════════════════════════════════ -->
-  <header id="navbar">
-    <div class="nav-inner">
-      <a href="#inicio" class="nav-logo">
-        <img src="assets/cetu-navbar-logo.png" alt="Cetu Studios" height="36">
+  <!-- ══════════════════════════════════════════════
+       FLOATING PILL NAVBAR (Inspiración Orion Studios)
+  ══════════════════════════════════════════════ -->
+  <div class="nav-wrapper">
+    <header id="navbar" class="pill-navbar">
+      <a href="#inicio" class="nav-brand">
+        <img src="assets/cetu-navbar-logo.png" alt="Cetu Studios Logo" class="brand-logo">
       </a>
 
-      <nav class="nav-links" id="nav-links">
-        <a href="#inicio" class="nav-link">Inicio</a>
-        <a href="#servicios" class="nav-link">Servicios</a>
-        <a href="#proyectos" class="nav-link">Proyectos</a>
-        <a href="#nosotros" class="nav-link">Nosotros</a>
-        <a href="#contacto" class="nav-link">Contacto</a>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#inicio" class="nav-item active">Inicio</a>
+        <a href="#servicios" class="nav-item">Servicios</a>
+        <a href="#proyectos" class="nav-item">Proyectos</a>
+        <a href="#proceso" class="nav-item">Cómo trabajamos</a>
+        <a href="#nosotros" class="nav-item">Nosotros</a>
+        <a href="#contacto" class="nav-item">Contacto</a>
       </nav>
 
-      <a href="#contacto" class="btn-primary nav-cta">Hablemos de tu proyecto</a>
-
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobile-menu">
-      <a href="#inicio" class="mobile-link">Inicio</a>
-      <a href="#servicios" class="mobile-link">Servicios</a>
-      <a href="#proyectos" class="mobile-link">Proyectos</a>
-      <a href="#nosotros" class="mobile-link">Nosotros</a>
-      <a href="#contacto" class="mobile-link">Contacto</a>
-      <a href="#contacto" class="btn-primary mobile-cta">Hablemos de tu proyecto</a>
-    </div>
-  </header>
-
-  <!-- ═══════════════════════════════════════════
-       HERO
-  ═══════════════════════════════════════════ -->
-  <section id="inicio" class="hero">
-    <div class="hero-glow"></div>
-    <div class="container">
-      <div class="hero-layout">
-
-        <div class="hero-content">
-          <p class="hero-label">Estudio de Desarrollo Digital · República Dominicana</p>
-          <h1 class="hero-title">
-            Transformamos ideas en <span class="text-gold">soluciones digitales.</span>
-          </h1>
-          <p class="hero-subtitle">
-            Diseñamos y desarrollamos páginas web, sistemas y software personalizado para ayudar a los negocios a crecer y trabajar mejor.
-          </p>
-          <div class="hero-actions">
-            <a href="#servicios" class="btn-primary">Conoce nuestros servicios</a>
-            <a href="#contacto" class="btn-secondary">Inicia tu proyecto →</a>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <img src="assets/hero-3d.jpg" alt="Cetu Studios — Tecnología de alto nivel" class="hero-img">
-          <div class="hero-badge">
-            <span class="badge-dot"></span>
-            <span>Complejo por dentro. Simple por fuera.</span>
-          </div>
-        </div>
-
+      <div class="nav-right">
+        <a href="#contacto" class="btn-pill-cta">
+          <span>Hablemos de tu proyecto</span>
+          <i data-lucide="arrow-right" class="icon-sm"></i>
+        </a>
+        <button id="mobile-toggle" class="btn-mobile-toggle" aria-label="Abrir menú">
+          <i data-lucide="menu" class="icon-menu"></i>
+          <i data-lucide="x" class="icon-close"></i>
+        </button>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- ═══════════════════════════════════════════
-       SERVICIOS
-  ═══════════════════════════════════════════ -->
-  <section id="servicios" class="section">
-    <div class="container">
-
-      <div class="section-header">
-        <p class="section-label">Lo que hacemos</p>
-        <h2 class="section-title">Todo lo que tu negocio necesita, en un solo lugar.</h2>
-        <p class="section-desc">Desde tu presencia en internet hasta los sistemas internos que hacen funcionar tu empresa.</p>
-      </div>
-
-      <!-- Bento Grid de servicios -->
-      <div class="services-grid">
-
-        <!-- Grande: Desarrollo Web -->
-        <div class="service-card service-card--large">
-          <div class="service-card-content">
-            <span class="service-icon">🌐</span>
-            <h3 class="service-title">Páginas Web Profesionales</h3>
-            <p class="service-desc">Sitios web rápidos, modernos y diseñados para representar tu negocio con autoridad. Desde landing pages hasta sitios corporativos completos.</p>
-            <a href="#contacto" class="service-link">Quiero mi página web →</a>
-          </div>
-          <div class="service-card-img">
-            <img src="assets/texture-gold.jpg" alt="Desarrollo Web" loading="lazy">
-          </div>
-        </div>
-
-        <!-- Ecommerce -->
-        <div class="service-card service-card--medium">
-          <div class="service-card-content">
-            <span class="service-icon">🛒</span>
-            <h3 class="service-title">Tiendas Online y Ecommerce</h3>
-            <p class="service-desc">Vende en línea con una tienda diseñada para convertir visitas en ventas. Con catálogos, carrito y pagos integrados.</p>
-            <a href="#contacto" class="service-link">Crear mi tienda →</a>
-          </div>
-          <div class="service-card-img">
-            <img src="assets/software-ecommerce.jpg" alt="Ecommerce" loading="lazy">
-          </div>
-        </div>
-
-        <!-- Sistemas -->
-        <div class="service-card service-card--medium">
-          <div class="service-card-content">
-            <span class="service-icon">⚙️</span>
-            <h3 class="service-title">Sistemas Administrativos</h3>
-            <p class="service-desc">Plataformas para gestionar inventario, ventas, facturación y operaciones de tu empresa desde un solo panel.</p>
-            <a href="#contacto" class="service-link">Ver sistemas →</a>
-          </div>
-          <div class="service-card-img">
-            <img src="assets/software-erp.jpg" alt="Sistemas ERP" loading="lazy">
-          </div>
-        </div>
-
-        <!-- Software -->
-        <div class="service-card service-card--medium">
-          <div class="service-card-content">
-            <span class="service-icon">💻</span>
-            <h3 class="service-title">Software Personalizado</h3>
-            <p class="service-desc">Cuando ninguna herramienta existente se adapta a tu negocio, creamos exactamente lo que necesitas.</p>
-            <a href="#contacto" class="service-link">Cotizar →</a>
-          </div>
-          <div class="service-card-img">
-            <img src="assets/software-custom.jpg" alt="Software Personalizado" loading="lazy">
-          </div>
-        </div>
-
-        <!-- Automatización -->
-        <div class="service-card service-card--medium">
-          <div class="service-card-content">
-            <span class="service-icon">⚡</span>
-            <h3 class="service-title">Automatización de Procesos</h3>
-            <p class="service-desc">Elimina tareas repetitivas y conecta tus herramientas para que tu equipo trabaje más inteligente.</p>
-            <a href="#contacto" class="service-link">Automatizar →</a>
-          </div>
-          <div class="service-card-img">
-            <img src="assets/software-crm.jpg" alt="Automatización" loading="lazy">
-          </div>
-        </div>
-
-        <!-- CTA Card -->
-        <div class="service-card service-card--cta">
-          <p class="service-cta-label">¿No sabes qué necesitas?</p>
-          <h3 class="service-cta-title">Cuéntanos tu idea y te orientamos.</h3>
-          <a href="#contacto" class="btn-primary">Hablar con nosotros</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       PROYECTOS
-  ═══════════════════════════════════════════ -->
-  <section id="proyectos" class="section section--alt">
-    <div class="container">
-
-      <div class="section-header">
-        <p class="section-label">Nuestro trabajo</p>
-        <h2 class="section-title">Proyectos que hablan por sí solos.</h2>
-        <p class="section-desc">Plataformas y sistemas desarrollados con estándares profesionales de ingeniería.</p>
-      </div>
-
-      <div class="projects-grid">
-
-        <!-- Proyecto 1 -->
-        <div class="project-card">
-          <div class="project-img-wrap">
-            <img src="assets/software-erp.jpg" alt="Sistema Administrativo ERP" class="project-img" loading="lazy">
-            <span class="project-badge">Sistema Empresarial</span>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Sistema Administrativo & Facturación</h3>
-            <p class="project-desc">Plataforma de gestión de inventario, ventas y facturación fiscal para empresas dominicanas. Control completo desde un solo panel.</p>
-            <div class="project-tags">
-              <span class="tag">Inventario</span>
-              <span class="tag">Facturación</span>
-              <span class="tag">Reportes</span>
-            </div>
-            <a href="#contacto" class="project-link">Quiero algo similar →</a>
-          </div>
-        </div>
-
-        <!-- Proyecto 2 -->
-        <div class="project-card">
-          <div class="project-img-wrap">
-            <img src="assets/software-ecommerce.jpg" alt="Tienda Online Ecommerce" class="project-img" loading="lazy">
-            <span class="project-badge">Ecommerce</span>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Tienda Digital con Pagos Integrados</h3>
-            <p class="project-desc">Tienda online con catálogo de productos, carrito intuitivo e integración con pasarelas de pago locales e internacionales.</p>
-            <div class="project-tags">
-              <span class="tag">Tienda Online</span>
-              <span class="tag">Pagos</span>
-              <span class="tag">Catálogo</span>
-            </div>
-            <a href="#contacto" class="project-link">Quiero algo similar →</a>
-          </div>
-        </div>
-
-        <!-- Proyecto 3 -->
-        <div class="project-card">
-          <div class="project-img-wrap">
-            <img src="assets/software-inventory.jpg" alt="Control de Inventario" class="project-img" loading="lazy">
-            <span class="project-badge">Sistema de Inventario</span>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Control de Inventario y Stock</h3>
-            <p class="project-desc">Sistema para administrar productos, alertas de reabastecimiento y análisis de ventas por categoría en tiempo real.</p>
-            <div class="project-tags">
-              <span class="tag">Stock</span>
-              <span class="tag">Alertas</span>
-              <span class="tag">Analítica</span>
-            </div>
-            <a href="#contacto" class="project-link">Quiero algo similar →</a>
-          </div>
-        </div>
-
-        <!-- Proyecto 4 -->
-        <div class="project-card">
-          <div class="project-img-wrap">
-            <img src="assets/software-crm.jpg" alt="CRM y Gestión de Clientes" class="project-img" loading="lazy">
-            <span class="project-badge">CRM</span>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Gestión de Clientes y Ventas</h3>
-            <p class="project-desc">Plataforma para hacer seguimiento de oportunidades, cotizaciones y clientes. Historial completo y notificaciones automáticas por WhatsApp.</p>
-            <div class="project-tags">
-              <span class="tag">Clientes</span>
-              <span class="tag">Pipeline</span>
-              <span class="tag">WhatsApp</span>
-            </div>
-            <a href="#contacto" class="project-link">Quiero algo similar →</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       CÓMO TRABAJAMOS
-  ═══════════════════════════════════════════ -->
-  <section class="section">
-    <div class="container">
-
-      <div class="section-header">
-        <p class="section-label">El proceso</p>
-        <h2 class="section-title">Así trabajamos contigo.</h2>
-        <p class="section-desc">Un proceso claro, sin sorpresas, desde la primera conversación hasta el lanzamiento.</p>
-      </div>
-
-      <div class="process-grid">
-
-        <div class="process-step">
-          <div class="process-number">01</div>
-          <h3 class="process-title">Conversamos sobre tu idea</h3>
-          <p class="process-desc">Nos cuentas qué necesitas, cuál es tu negocio y qué problema quieres resolver. Sin tecnicismos ni formularios complicados.</p>
-        </div>
-
-        <div class="process-step">
-          <div class="process-number">02</div>
-          <h3 class="process-title">Diseñamos la solución</h3>
-          <p class="process-desc">Planificamos la estructura, las funcionalidades y el diseño antes de escribir una sola línea de código. Tú apruebas antes de continuar.</p>
-        </div>
-
-        <div class="process-step">
-          <div class="process-number">03</div>
-          <h3 class="process-title">Desarrollamos el proyecto</h3>
-          <p class="process-desc">Construimos tu solución con atención al detalle. Te mostramos avances durante el proceso para que siempre sepas cómo va todo.</p>
-        </div>
-
-        <div class="process-step">
-          <div class="process-number">04</div>
-          <h3 class="process-title">Lanzamos y entregamos</h3>
-          <p class="process-desc">Publicamos el proyecto y te acompañamos en el proceso de puesta en marcha para que todo funcione desde el primer día.</p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       NOSOTROS
-  ═══════════════════════════════════════════ -->
-  <section id="nosotros" class="section section--alt">
-    <div class="container">
-      <div class="about-layout">
-
-        <div class="about-content">
-          <p class="section-label">Quiénes somos</p>
-          <h2 class="about-title">
-            Somos Cetu Studios.
-          </h2>
-          <p class="about-desc">
-            Un estudio de desarrollo tecnológico basado en República Dominicana. Ayudamos a negocios, emprendedores y organizaciones a transformar sus ideas en productos digitales reales.
-          </p>
-          <p class="about-desc">
-            No somos una agencia genérica. Somos un equipo comprometido con entender tu negocio antes de escribir una sola línea de código.
-          </p>
-          <blockquote class="about-quote">
-            "Complejo por dentro. Simple por fuera."
-          </blockquote>
-          <p class="about-philosophy">
-            Creemos que la tecnología debe ser poderosa por dentro y fácil de usar por fuera. Cada proyecto que entregamos cumple ese principio.
-          </p>
-        </div>
-
-        <div class="about-values">
-          <div class="value-item">
-            <div class="value-icon">🎯</div>
-            <div>
-              <h4 class="value-title">Enfocados en resultados</h4>
-              <p class="value-desc">Cada decisión de diseño y desarrollo tiene un propósito claro para tu negocio.</p>
-            </div>
-          </div>
-          <div class="value-item">
-            <div class="value-icon">🤝</div>
-            <div>
-              <h4 class="value-title">Comunicación directa</h4>
-              <p class="value-desc">Trabajas directamente con quien desarrolla tu proyecto. Sin intermediarios.</p>
-            </div>
-          </div>
-          <div class="value-item">
-            <div class="value-icon">🔧</div>
-            <div>
-              <h4 class="value-title">Soluciones a medida</h4>
-              <p class="value-desc">Tu negocio es único. Tu software también debería serlo.</p>
-            </div>
-          </div>
-          <div class="value-item">
-            <div class="value-icon">📈</div>
-            <div>
-              <h4 class="value-title">Pensando en el futuro</h4>
-              <p class="value-desc">Construimos plataformas que crecen con tu empresa, no que la limitan.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       CONTACTO
-  ═══════════════════════════════════════════ -->
-  <section id="contacto" class="section">
-    <div class="container">
-
-      <div class="contact-layout">
-
-        <div class="contact-info">
-          <p class="section-label">Hablemos</p>
-          <h2 class="contact-title">¿Tienes un proyecto en mente?</h2>
-          <p class="contact-desc">
-            Cuéntanos qué necesitas. Te respondemos en menos de 24 horas con una evaluación inicial y los próximos pasos.
-          </p>
-
-          <a href="https://wa.me/18090000000?text=Hola%20Cetu%20Studios,%20quiero%20conversar%20sobre%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Escríbenos por WhatsApp
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-drawer" class="mobile-drawer">
+      <div class="mobile-drawer-inner">
+        <a href="#inicio" class="mobile-link">Inicio</a>
+        <a href="#servicios" class="mobile-link">Servicios</a>
+        <a href="#proyectos" class="mobile-link">Proyectos</a>
+        <a href="#proceso" class="mobile-link">Cómo trabajamos</a>
+        <a href="#nosotros" class="mobile-link">Nosotros</a>
+        <a href="#contacto" class="mobile-link">Contacto</a>
+        <div class="mobile-cta-wrap">
+          <a href="#contacto" class="btn-gold-main w-full">Hablemos de tu proyecto</a>
+          <a href="https://wa.me/18090000000?text=Hola%20Cetu%20Studios,%20quiero%20conversar%20sobre%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-outline w-full">
+            <i data-lucide="message-circle" class="icon-sm"></i>
+            <span>WhatsApp directo</span>
           </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-          <div class="contact-details">
-            <div class="contact-item">
-              <span class="contact-label">Correo</span>
-              <a href="mailto:proyectos@cetustudios.com" class="contact-value">proyectos@cetustudios.com</a>
+  <!-- ══════════════════════════════════════════════
+       SECTION 1: HERO (Dinámico, claro y humano)
+  ══════════════════════════════════════════════ -->
+  <section id="inicio" class="hero-section">
+    <!-- Subtle Golden Atmospheric Glow -->
+    <div class="hero-bg-glow"></div>
+
+    <div class="container">
+      <div class="hero-grid">
+        
+        <!-- Hero Text -->
+        <div class="hero-text-col reveal-on-scroll">
+          <div class="badge-tag">
+            <span class="badge-dot"></span>
+            <span>Estudio de Desarrollo Digital · República Dominicana</span>
+          </div>
+
+          <h1 class="hero-title">
+            Construimos soluciones digitales para llevar tus ideas <span class="highlight-gold">más lejos.</span>
+          </h1>
+
+          <p class="hero-description">
+            Desde páginas web hasta sistemas y software personalizado, desarrollamos herramientas digitales que ayudan a los negocios a crecer y trabajar mejor.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#servicios" class="btn-gold-main">
+              <span>Conoce nuestros servicios</span>
+              <i data-lucide="arrow-down" class="icon-sm"></i>
+            </a>
+            <a href="#proyectos" class="btn-secondary-light">
+              <span>Ver proyectos</span>
+              <i data-lucide="arrow-right" class="icon-sm"></i>
+            </a>
+          </div>
+
+          <!-- Quick Trust Indicators -->
+          <div class="hero-quick-features">
+            <div class="feature-item">
+              <i data-lucide="check-circle-2" class="icon-feature"></i>
+              <span>Diseño claro y moderno</span>
             </div>
-            <div class="contact-item">
-              <span class="contact-label">Ubicación</span>
-              <span class="contact-value">República Dominicana · Proyectos globales</span>
+            <div class="feature-item">
+              <i data-lucide="check-circle-2" class="icon-feature"></i>
+              <span>Desarrollo a la medida</span>
+            </div>
+            <div class="feature-item">
+              <i data-lucide="check-circle-2" class="icon-feature"></i>
+              <span>Soporte cercano</span>
             </div>
           </div>
         </div>
 
-        <div class="contact-form-wrap">
-          <!-- Mensaje de éxito -->
-          <div id="form-success" class="form-success hidden">
-            <span class="success-icon">✓</span>
-            <div>
-              <strong>¡Mensaje enviado!</strong>
-              <p>Nos pondremos en contacto contigo pronto. También puedes escribirnos por WhatsApp para una respuesta inmediata.</p>
+        <!-- Hero Digital Illustration -->
+        <div class="hero-visual-col reveal-on-scroll">
+          <div class="illustration-frame floating-element">
+            <img src="assets/hero-illustration.jpg" alt="Cetu Studios — Desarrollo Digital Ilustración" class="hero-illustration-img">
+            
+            <!-- Floating Interaction Cards -->
+            <div class="float-card float-card-top">
+              <div class="float-icon-gold">
+                <i data-lucide="sparkles" class="icon-sm"></i>
+              </div>
+              <div class="float-content">
+                <div class="float-title">Simple por fuera</div>
+                <div class="float-subtitle">Fácil de usar para tu equipo</div>
+              </div>
             </div>
-            <a id="wa-forward" href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="margin-top:0.75rem;display:inline-flex">Enviar por WhatsApp también →</a>
-          </div>
 
-          <form id="contact-form" class="contact-form" novalidate>
-            <div class="form-row">
-              <div class="form-field">
-                <label for="f-name">Tu nombre</label>
-                <input type="text" id="f-name" name="nombre" placeholder="Ej: María González" required>
-              </div>
-              <div class="form-field">
-                <label for="f-company">Tu empresa <span class="optional">(opcional)</span></label>
-                <input type="text" id="f-company" name="empresa" placeholder="Ej: Nova Retail">
+            <div class="float-card float-card-bottom">
+              <div class="float-badge-status">
+                <span class="pulse-dot"></span>
+                <span>Proyectos 100% funcionales</span>
               </div>
             </div>
-            <div class="form-field">
-              <label for="f-email">Correo electrónico</label>
-              <input type="email" id="f-email" name="correo" placeholder="tu@correo.com" required>
-            </div>
-            <div class="form-field">
-              <label for="f-service">¿Qué necesitas?</label>
-              <select id="f-service" name="servicio">
-                <option value="">Selecciona una opción</option>
-                <option>Página web profesional</option>
-                <option>Tienda online / Ecommerce</option>
-                <option>Sistema administrativo</option>
-                <option>Sistema de inventario y ventas</option>
-                <option>Software personalizado</option>
-                <option>Aplicación web</option>
-                <option>Automatización de procesos</option>
-                <option>No sé, necesito orientación</option>
-              </select>
-            </div>
-            <div class="form-field">
-              <label for="f-message">Cuéntanos tu idea</label>
-              <textarea id="f-message" name="mensaje" rows="4" placeholder="Describe brevemente tu proyecto o lo que quieres lograr..." required></textarea>
-            </div>
-            <button type="submit" class="btn-primary btn-full" id="form-submit">
-              Enviar mensaje
-            </button>
-            <p class="form-note">Tu información es confidencial. No compartimos tus datos con nadie.</p>
-          </form>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════════ -->
-  <footer class="footer">
+  <!-- ══════════════════════════════════════════════
+       SECTION 2: SERVICIOS (Composición dinámica y comprensible)
+       Sección con fondo crema suave/claro para contraste elegante
+  ══════════════════════════════════════════════ -->
+  <section id="servicios" class="section-light">
     <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <img src="assets/cetu-navbar-logo.png" alt="Cetu Studios" height="34" class="footer-logo">
-          <p class="footer-tagline">Complejo por dentro. Simple por fuera.</p>
-          <p class="footer-location">República Dominicana · Proyectos para todo el mundo</p>
+      
+      <div class="section-heading text-center reveal-on-scroll">
+        <span class="pill-category">Lo que hacemos</span>
+        <h2 class="title-dark">Soluciones digitales pensadas para tu negocio</h2>
+        <p class="subtitle-dark">
+          Desarrollamos herramientas intuitivas, fáciles de entender y construidas exactamente para lo que tu empresa necesita.
+        </p>
+      </div>
+
+      <!-- Bento-style Dynamic Services Grid -->
+      <div class="services-dynamic-grid">
+        
+        <!-- Service 1: Páginas Web (Destacado grande) -->
+        <div class="service-bento-card bento-wide reveal-on-scroll">
+          <div class="bento-text">
+            <div class="service-chip">01 · Presencia Digital</div>
+            <h3 class="bento-title">Desarrollo de páginas web</h3>
+            <p class="bento-desc">
+              Creamos páginas web profesionales, rápidas y atractivas que presentan tu negocio con autoridad, transmiten confianza a tus clientes y convierten visitas en consultas reales.
+            </p>
+            <ul class="bento-list">
+              <li><i data-lucide="check" class="icon-check"></i> Sitios corporativos y landing pages</li>
+              <li><i data-lucide="check" class="icon-check"></i> Adaptadas a teléfonos y computadoras</li>
+              <li><i data-lucide="check" class="icon-check"></i> Optimización para aparecer en Google</li>
+            </ul>
+            <a href="#contacto" class="service-action-link">
+              <span>Cotizar una página web</span>
+              <i data-lucide="arrow-right" class="icon-xs"></i>
+            </a>
+          </div>
+          <div class="bento-image-wrap">
+            <img src="assets/service-web.jpg" alt="Desarrollo de Páginas Web" class="bento-img zoom-on-hover">
+          </div>
         </div>
 
-        <div class="footer-nav">
-          <div class="footer-col">
-            <span class="footer-col-title">Navegación</span>
-            <a href="#inicio">Inicio</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#proyectos">Proyectos</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#contacto">Contacto</a>
+        <!-- Service 2: Tiendas Online y Ecommerce -->
+        <div class="service-bento-card bento-standard reveal-on-scroll">
+          <div class="bento-image-wrap bento-img-top">
+            <img src="assets/service-ecommerce.jpg" alt="Tiendas Online y Ecommerce" class="bento-img zoom-on-hover">
           </div>
-          <div class="footer-col">
-            <span class="footer-col-title">Servicios</span>
-            <a href="#servicios">Páginas web</a>
-            <a href="#servicios">Tiendas online</a>
-            <a href="#servicios">Sistemas empresariales</a>
-            <a href="#servicios">Software personalizado</a>
-            <a href="#servicios">Automatización</a>
+          <div class="bento-text">
+            <div class="service-chip">02 · Ventas en Línea</div>
+            <h3 class="bento-title">Tiendas online y ecommerce</h3>
+            <p class="bento-desc">
+              Vende tus productos en internet con una tienda fácil de administrar. Incluye catálogo organizado, carrito de compra sencillo y pagos con tarjeta de crédito o transferencias.
+            </p>
+            <a href="#contacto" class="service-action-link">
+              <span>Crear mi tienda online</span>
+              <i data-lucide="arrow-right" class="icon-xs"></i>
+            </a>
           </div>
+        </div>
+
+        <!-- Service 3: Sistemas Administrativos e Inventario -->
+        <div class="service-bento-card bento-standard reveal-on-scroll">
+          <div class="bento-image-wrap bento-img-top">
+            <img src="assets/service-admin.jpg" alt="Sistemas Administrativos y de Inventario" class="bento-img zoom-on-hover">
+          </div>
+          <div class="bento-text">
+            <div class="service-chip">03 · Gestión y Control</div>
+            <h3 class="bento-title">Sistemas administrativos e inventario</h3>
+            <p class="bento-desc">
+              Plataformas para controlar tus ventas, compras, stock de mercancía y facturación desde cualquier lugar, manteniendo tu empresa ordenada y con números claros.
+            </p>
+            <a href="#contacto" class="service-action-link">
+              <span>Automatizar mi gestión</span>
+              <i data-lucide="arrow-right" class="icon-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service 4: Software Personalizado y Automatización -->
+        <div class="service-bento-card bento-wide bento-reverse reveal-on-scroll">
+          <div class="bento-text">
+            <div class="service-chip">04 · A Tu Medida</div>
+            <h3 class="bento-title">Software personalizado y automatización</h3>
+            <p class="bento-desc">
+              Cuando los programas existentes no se ajustan a tu forma de trabajar, desarrollamos soluciones exclusivas para tu negocio y automatizamos tareas repetitivas para ahorrar horas de trabajo.
+            </p>
+            <ul class="bento-list">
+              <li><i data-lucide="check" class="icon-check"></i> Aplicaciones web a la medida de tu proceso</li>
+              <li><i data-lucide="check" class="icon-check"></i> Conexión con WhatsApp y notificaciones automáticas</li>
+              <li><i data-lucide="check" class="icon-check"></i> Sin mensualidades obligatorias ni licencias ajenas</li>
+            </ul>
+            <a href="#contacto" class="service-action-link">
+              <span>Consultar mi requerimiento</span>
+              <i data-lucide="arrow-right" class="icon-xs"></i>
+            </a>
+          </div>
+          <div class="bento-image-wrap">
+            <img src="assets/service-software.jpg" alt="Software Personalizado y Automatización" class="bento-img zoom-on-hover">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 3: PROYECTOS REALES (EBC Dominicana y Frandhy Joyería)
+       Fondo oscuro #151613 con capturas reales y botones funcionales
+  ══════════════════════════════════════════════ -->
+  <section id="proyectos" class="section-dark">
+    <div class="container">
+      
+      <div class="section-heading text-center reveal-on-scroll">
+        <span class="badge-tag">Casos de Éxito Reales</span>
+        <h2 class="title-light">Proyectos que marcan la diferencia</h2>
+        <p class="subtitle-light">
+          Conoce algunos de los trabajos desarrollados por Cetu Studios para organizaciones y comercios reales.
+        </p>
+      </div>
+
+      <div class="featured-projects-container">
+
+        <!-- PROYECTO 1: EBC Dominicana -->
+        <article class="project-showcase-card reveal-on-scroll">
+          <div class="project-preview-side">
+            <div class="browser-mockup-frame">
+              <div class="browser-mockup-header">
+                <span class="browser-dot dot-red"></span>
+                <span class="browser-dot dot-yellow"></span>
+                <span class="browser-dot dot-green"></span>
+                <span class="browser-url">https://ebcdominicana.org</span>
+              </div>
+              <div class="browser-mockup-body">
+                <img src="assets/project-ebc.jpg" alt="Economía del Bien Común República Dominicana" class="project-live-img">
+              </div>
+            </div>
+          </div>
+
+          <div class="project-info-side">
+            <div class="project-client-badge">
+              <i data-lucide="globe" class="icon-xs"></i>
+              <span>Desarrollo Web Institucional</span>
+            </div>
+            
+            <h3 class="project-name">Economía del Bien Común — República Dominicana</h3>
+            
+            <p class="project-description">
+              Diseño y desarrollo del sitio web oficial para la organización nacional de la Economía del Bien Común (EBC / ECONGOOD). Una plataforma institucional clara, accesible y optimizada para difundir publicaciones, valores éticos empresariales y proyectos en el país.
+            </p>
+
+            <div class="project-highlights">
+              <div class="highlight-chip">Diseño institucional</div>
+              <div class="highlight-chip">Estructura editorial</div>
+              <div class="highlight-chip">Experiencia fluida</div>
+            </div>
+
+            <div class="project-action-wrap">
+              <a href="https://ebcdominicana.org" target="_blank" rel="noopener noreferrer" class="btn-visit-project">
+                <span>Visitar proyecto</span>
+                <i data-lucide="external-link" class="icon-sm"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROYECTO 2: Frandhy Joyería -->
+        <article class="project-showcase-card project-card-reverse reveal-on-scroll">
+          <div class="project-preview-side">
+            <div class="browser-mockup-frame">
+              <div class="browser-mockup-header">
+                <span class="browser-dot dot-red"></span>
+                <span class="browser-dot dot-yellow"></span>
+                <span class="browser-dot dot-green"></span>
+                <span class="browser-url">https://frandhyjoyeria.com</span>
+              </div>
+              <div class="browser-mockup-body">
+                <img src="assets/project-frandhy.jpg" alt="Frandhy Joyería Tienda Online" class="project-live-img">
+              </div>
+            </div>
+          </div>
+
+          <div class="project-info-side">
+            <div class="project-client-badge">
+              <i data-lucide="shopping-bag" class="icon-xs"></i>
+              <span>Tienda Online & Catálogo Digital</span>
+            </div>
+            
+            <h3 class="project-name">Frandhy Joyería — "La Mina de Plata 925"</h3>
+            
+            <p class="project-description">
+              Plataforma digital y tienda online para un prestigioso taller orfebre en Santiago de los Caballeros. Destaca visualmente la calidad de las joyas en Plata Ley 925, con catálogo interactivo, cálculo de presupuestos y canal directo de atención vía WhatsApp.
+            </p>
+
+            <div class="project-highlights">
+              <div class="highlight-chip">Ecommerce moderno</div>
+              <div class="highlight-chip">Catálogo de productos</div>
+              <div class="highlight-chip">Integración WhatsApp</div>
+            </div>
+
+            <div class="project-action-wrap">
+              <a href="https://frandhyjoyeria.com" target="_blank" rel="noopener noreferrer" class="btn-visit-project">
+                <span>Visitar tienda</span>
+                <i data-lucide="external-link" class="icon-sm"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 4: CÓMO TRABAJAMOS (Proceso claro en 4 pasos)
+       Sección clara, dinámica e ilustrativa
+  ══════════════════════════════════════════════ -->
+  <section id="proceso" class="section-light">
+    <div class="container">
+      
+      <div class="section-heading text-center reveal-on-scroll">
+        <span class="pill-category">Nuestro Proceso</span>
+        <h2 class="title-dark">Cómo trabajamos contigo</h2>
+        <p class="subtitle-dark">
+          Un camino estructurado, transparente y sin tecnicismos confusos desde el primer día hasta la entrega final.
+        </p>
+      </div>
+
+      <div class="process-steps-container">
+        
+        <!-- Step 1 -->
+        <div class="step-card reveal-on-scroll">
+          <div class="step-badge">Paso 01</div>
+          <div class="step-icon-wrap">
+            <i data-lucide="message-square-heart" class="icon-process"></i>
+          </div>
+          <h3 class="step-title">Escuchamos tu idea</h3>
+          <p class="step-description">
+            Conversamos sobre tu negocio, qué necesitas resolver y qué metas quieres alcanzar. Entendemos todo antes de comenzar.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card reveal-on-scroll">
+          <div class="step-badge">Paso 02</div>
+          <div class="step-icon-wrap">
+            <i data-lucide="layout-template" class="icon-process"></i>
+          </div>
+          <h3 class="step-title">Definimos y diseñamos</h3>
+          <p class="step-description">
+            Estructuramos la solución visual y funcionalmente. Te mostramos cómo quedará el diseño para que lo apruebes con tranquilidad.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card reveal-on-scroll">
+          <div class="step-badge">Paso 03</div>
+          <div class="step-icon-wrap">
+            <i data-lucide="code-2" class="icon-process"></i>
+          </div>
+          <h3 class="step-title">Desarrollamos el proyecto</h3>
+          <p class="step-description">
+            Programamos tu solución con código limpio y altos estándares. Compartimos avances periódicos para que sigas cada paso.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-card reveal-on-scroll">
+          <div class="step-badge">Paso 04</div>
+          <div class="step-icon-wrap">
+            <i data-lucide="rocket" class="icon-process"></i>
+          </div>
+          <h3 class="step-title">Entregamos la solución</h3>
+          <p class="step-description">
+            Publicamos tu plataforma lista para usar y te capacitamos para que tú o tu equipo la administren con total confianza.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 5: SOBRE NOSOTROS (Identidad y filosofía)
+       Fondo oscuro #151613 con la cita de marca
+  ══════════════════════════════════════════════ -->
+  <section id="nosotros" class="section-dark">
+    <div class="container">
+      
+      <div class="about-grid">
+        
+        <div class="about-text-col reveal-on-scroll">
+          <span class="badge-tag">Sobre Nosotros</span>
+          <h2 class="title-light">Somos Cetu Studios</h2>
+          
+          <p class="about-lead">
+            Un estudio de desarrollo digital en República Dominicana dedicado a crear soluciones tecnológicas para personas, emprendedores y empresas.
+          </p>
+
+          <p class="subtitle-light">
+            Nos enfocamos en entender a fondo las necesidades de cada cliente para diseñar herramientas digitales que no solo se vean bien, sino que hagan el trabajo del día a día más simple, rápido y productivo.
+          </p>
+
+          <!-- Slogan Box -->
+          <div class="slogan-box">
+            <div class="slogan-quote-icon">
+              <i data-lucide="quote" class="icon-quote"></i>
+            </div>
+            <div class="slogan-text">
+              "COMPLEJO POR DENTRO. SIMPLE POR FUERA."
+            </div>
+            <div class="slogan-caption">Nuestra filosofía fundamental de ingeniería</div>
+          </div>
+        </div>
+
+        <div class="about-cards-col reveal-on-scroll">
+          
+          <div class="pillar-card">
+            <div class="pillar-icon">
+              <i data-lucide="shield-check" class="icon-pillar"></i>
+            </div>
+            <div class="pillar-content">
+              <h4 class="pillar-title">Confianza y cercanía</h4>
+              <p class="pillar-desc">Trato directo con los desarrolladores de tu proyecto, con respuestas rápidas y explicaciones claras.</p>
+            </div>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">
+              <i data-lucide="palette" class="icon-pillar"></i>
+            </div>
+            <div class="pillar-content">
+              <h4 class="pillar-title">Diseño con propósito</h4>
+              <p class="pillar-desc">Cada botón, color y sección está pensado para que tus usuarios encuentren lo que buscan sin dificultad.</p>
+            </div>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">
+              <i data-lucide="cpu" class="icon-pillar"></i>
+            </div>
+            <div class="pillar-content">
+              <h4 class="pillar-title">Soluciones que funcionan</h4>
+              <p class="pillar-desc">Tecnología estable y probada para que tu negocio opere sin interrupciones ni sorpresas técnicas.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SECTION 6: CONTACTO (Fácil, directo y con WhatsApp)
+  ══════════════════════════════════════════════ -->
+  <section id="contacto" class="section-light">
+    <div class="container">
+      
+      <div class="contact-card-wrapper reveal-on-scroll">
+        <div class="contact-grid">
+          
+          <!-- Contact Left Info -->
+          <div class="contact-info-panel">
+            <span class="pill-category">Hablemos</span>
+            <h2 class="title-dark mb-4">¿Tienes un proyecto en mente?</h2>
+            
+            <p class="subtitle-dark mb-8">
+              Cuéntanos tu idea. Te responderemos en menos de 24 horas con una orientación clara sobre la mejor manera de desarrollarla.
+            </p>
+
+            <!-- WhatsApp Direct Card -->
+            <div class="whatsapp-direct-card">
+              <div class="wa-header">
+                <i data-lucide="message-circle" class="icon-wa"></i>
+                <div>
+                  <div class="wa-title">Conversa por WhatsApp</div>
+                  <div class="wa-subtitle">Respuesta inmediata</div>
+                </div>
+              </div>
+              <p class="wa-desc">
+                ¿Prefieres conversar directamente? Escríbenos por WhatsApp y te atendemos de inmediato.
+              </p>
+              <a href="https://wa.me/18090000000?text=Hola%20Cetu%20Studios,%20quiero%20conversar%20sobre%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-solid">
+                <i data-lucide="send" class="icon-xs"></i>
+                <span>Abrir WhatsApp</span>
+              </a>
+            </div>
+
+            <div class="contact-meta-info">
+              <div class="meta-item">
+                <i data-lucide="mail" class="icon-meta"></i>
+                <div>
+                  <div class="meta-label">Correo electrónico</div>
+                  <a href="mailto:proyectos@cetustudios.com" class="meta-link">proyectos@cetustudios.com</a>
+                </div>
+              </div>
+
+              <div class="meta-item">
+                <i data-lucide="map-pin" class="icon-meta"></i>
+                <div>
+                  <div class="meta-label">Ubicación</div>
+                  <span class="meta-text">República Dominicana · Servicios globales</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-panel">
+            <div class="form-header">
+              <h3 class="form-title">Envíanos un mensaje</h3>
+              <p class="form-subtitle">Completa el formulario y te contactaremos a la brevedad.</p>
+            </div>
+
+            <!-- Confirmation message -->
+            <div id="contact-success" class="contact-success-box hidden">
+              <div class="success-icon-wrap">
+                <i data-lucide="check" class="icon-success"></i>
+              </div>
+              <h4 class="success-title">¡Mensaje enviado con éxito!</h4>
+              <p class="success-desc">
+                Gracias por comunicarte con nosotros. Hemos recibido tus datos y te responderemos muy pronto.
+              </p>
+              <a id="wa-copy-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-gold-main btn-sm mt-3">
+                <span>Enviar copia a WhatsApp</span>
+                <i data-lucide="arrow-right" class="icon-xs"></i>
+              </a>
+            </div>
+
+            <form id="contact-form" class="cetu-form">
+              <div class="form-group">
+                <label for="form-name" class="form-label">Tu nombre *</label>
+                <input type="text" id="form-name" required placeholder="Ej: Marcos Almonte" class="form-input">
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="form-email" class="form-label">Correo electrónico *</label>
+                  <input type="email" id="form-email" required placeholder="tu@correo.com" class="form-input">
+                </div>
+                <div class="form-group">
+                  <label for="form-company" class="form-label">Empresa u Organización</label>
+                  <input type="text" id="form-company" placeholder="Ej: Joyería Nova" class="form-input">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="form-service" class="form-label">¿Qué servicio te interesa? *</label>
+                <select id="form-service" required class="form-select">
+                  <option value="" disabled selected>Selecciona una opción</option>
+                  <option value="Desarrollo de páginas web">Desarrollo de páginas web</option>
+                  <option value="Tiendas online y ecommerce">Tiendas online y ecommerce</option>
+                  <option value="Sistemas administrativos y de inventario">Sistemas administrativos e inventario</option>
+                  <option value="Software personalizado">Desarrollo de software personalizado</option>
+                  <option value="Automatización de procesos">Automatización de procesos empresariales</option>
+                  <option value="Otro requerimiento">Otro requerimiento</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="form-message" class="form-label">Cuéntanos sobre tu idea o proyecto *</label>
+                <textarea id="form-message" rows="4" required placeholder="Describe brevemente qué necesitas, qué problema deseas resolver o qué funciones esperas..." class="form-textarea"></textarea>
+              </div>
+
+              <button type="submit" id="submit-btn" class="btn-gold-main w-full py-3">
+                <span>Enviar mensaje</span>
+                <i data-lucide="arrow-right" class="icon-sm"></i>
+              </button>
+
+              <div class="privacy-note">
+                <i data-lucide="lock" class="icon-tiny"></i>
+                <span>Tus datos son 100% confidenciales. No enviamos spam.</span>
+              </div>
+            </form>
+          </div>
+
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <span>© 2026 Cetu Studios. Todos los derechos reservados.</span>
-        <a href="#inicio" class="footer-top-link">Volver arriba ↑</a>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER (Limpio y estructurado como Orion)
+  ══════════════════════════════════════════════ -->
+  <footer class="main-footer">
+    <div class="container">
+      
+      <div class="footer-top-row">
+        <div class="footer-brand-col">
+          <a href="#inicio">
+            <img src="assets/cetu-navbar-logo.png" alt="Cetu Studios" class="footer-logo">
+          </a>
+          <p class="footer-motto">
+            Construimos soluciones digitales para llevar tus ideas más lejos.
+          </p>
+          <div class="footer-tagline">
+            "COMPLEJO POR DENTRO. SIMPLE POR FUERA."
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <div class="footer-heading">Navegación</div>
+          <ul class="footer-nav-list">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#proceso">Cómo trabajamos</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <div class="footer-heading">Servicios</div>
+          <ul class="footer-nav-list">
+            <li><a href="#servicios">Páginas web</a></li>
+            <li><a href="#servicios">Tiendas online</a></li>
+            <li><a href="#servicios">Sistemas administrativos</a></li>
+            <li><a href="#servicios">Gestión de inventario</a></li>
+            <li><a href="#servicios">Software a medida</a></li>
+            <li><a href="#servicios">Automatización</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact-col">
+          <div class="footer-heading">Contacto directo</div>
+          <p class="footer-contact-text">
+            República Dominicana<br>
+            <a href="mailto:proyectos@cetustudios.com">proyectos@cetustudios.com</a>
+          </p>
+          <a href="https://wa.me/18090000000?text=Hola%20Cetu%20Studios" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-footer">
+            <i data-lucide="message-circle" class="icon-xs"></i>
+            <span>WhatsApp</span>
+          </a>
+        </div>
       </div>
+
+      <div class="footer-bottom-row">
+        <div>© 2026 Cetu Studios. Todos los derechos reservados.</div>
+        <div>
+          <a href="#inicio" class="back-to-top">
+            <span>Volver arriba</span>
+            <i data-lucide="arrow-up" class="icon-xs"></i>
+          </a>
+        </div>
+      </div>
+
     </div>
   </footer>
 
+  <!-- App Javascript -->
   <script src="app.js"></script>
 </body>
 </html>

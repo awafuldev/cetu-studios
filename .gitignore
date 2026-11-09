@@ -1,6 +1,7 @@
 # Test & debug files
 test_cetu.py
 screenshot_*.png
+ref_orion_*.png
 __pycache__/
 *.pyc
 *.pyo

@@ -1,163 +1,199 @@
 /* ==========================================================================
-   CETU STUDIOS — app.js v2
-   Funcionalidades: Nav sticky, mobile menu, scroll spy, animaciones,
-   formulario de contacto con WhatsApp forward.
+   CETU STUDIOS — app.js v3
+   Animaciones, Navbar interactivo, Scroll Spy, Mobile Drawer,
+   y Formulario de contacto con WhatsApp forward.
    ========================================================================== */
 
 (function () {
   'use strict';
 
-  // ─── Elementos ─────────────────────────────────────────────────────────────
-  const navbar      = document.getElementById('navbar');
-  const hamburger   = document.getElementById('nav-hamburger');
-  const mobileMenu  = document.getElementById('mobile-menu');
-  const navLinks    = document.querySelectorAll('.nav-link');
-  const mobileLinks = document.querySelectorAll('.mobile-link, .mobile-cta');
-  const sections    = document.querySelectorAll('section[id], section');
-  const contactForm = document.getElementById('contact-form');
-  const formSuccess = document.getElementById('form-success');
-  const waForward   = document.getElementById('wa-forward');
-  const submitBtn   = document.getElementById('form-submit');
+  // Número oficial de WhatsApp de Cetu Studios
+  const WA_PHONE = '18090000000';
 
-  // ─── Número de WhatsApp (editar aquí) ──────────────────────────────────────
-  const WA_NUMBER = '18090000000';
+  // 1. Inicializar Lucide Icons
+  function initIcons() {
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+      window.lucide.createIcons();
+    }
+  }
 
-  // ─── Mobile Menu Toggle ────────────────────────────────────────────────────
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('open');
-      hamburger.classList.toggle('open', isOpen);
-      hamburger.setAttribute('aria-expanded', isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+  // 2. Navbar Scroll Effect & Scroll Spy
+  const navbar = document.getElementById('navbar');
+  const navItems = document.querySelectorAll('.nav-item');
+  const sections = ['inicio', 'servicios', 'proyectos', 'proceso', 'nosotros', 'contacto'];
+
+  function handleScroll() {
+    const scrollPos = window.scrollY;
+
+    // Navbar pill styling on scroll
+    if (navbar) {
+      if (scrollPos > 40) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    }
+
+    // Scroll spy for active link
+    const viewCenter = scrollPos + window.innerHeight * 0.35;
+    let currentSection = 'inicio';
+
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        const top = el.offsetTop;
+        const bottom = top + el.offsetHeight;
+        if (viewCenter >= top && viewCenter < bottom) {
+          currentSection = id;
+        }
+      }
     });
 
-    // Cerrar al hacer clic en un link
+    navItems.forEach(item => {
+      const href = item.getAttribute('href');
+      if (href === '#' + currentSection) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
+  }
+
+  // 3. Mobile Drawer Toggle
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const mobileDrawer = document.getElementById('mobile-drawer');
+  const mobileLinks = document.querySelectorAll('.mobile-link, .mobile-cta-wrap a');
+
+  if (mobileToggle && mobileDrawer) {
+    mobileToggle.addEventListener('click', () => {
+      const isOpen = mobileDrawer.classList.toggle('open');
+      mobileToggle.classList.toggle('active', isOpen);
+    });
+
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+        mobileDrawer.classList.remove('open');
+        mobileToggle.classList.remove('active');
       });
     });
   }
 
-  // ─── Scroll Spy — Detectar sección activa ────────────────────────────────
-  const sectionIds = ['inicio', 'servicios', 'proyectos', 'nosotros', 'contacto'];
+  // 4. Smooth Anchor Scrolling
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        const headerOffset = 90;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-  function updateActiveLink() {
-    const scrollY = window.scrollY + 100;
-
-    sectionIds.forEach(id => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const top = el.offsetTop;
-      const bottom = top + el.offsetHeight;
-
-      if (scrollY >= top && scrollY < bottom) {
-        navLinks.forEach(link => {
-          const href = link.getAttribute('href');
-          if (href === '#' + id) {
-            link.classList.add('active');
-          } else {
-            link.classList.remove('active');
-          }
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
         });
       }
     });
+  });
+
+  // 5. Scroll Reveal Animations (con fallback seguro)
+  function initScrollReveal() {
+    document.documentElement.classList.add('js-enabled');
+    const reveals = document.querySelectorAll('.reveal-on-scroll');
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      reveals.forEach(el => observer.observe(el));
+    } else {
+      reveals.forEach(el => el.classList.add('revealed'));
+    }
   }
 
-  window.addEventListener('scroll', updateActiveLink, { passive: true });
-  updateActiveLink();
+  // 6. Formulario de Contacto + Forward a WhatsApp
+  const contactForm = document.getElementById('contact-form');
+  const contactSuccess = document.getElementById('contact-success');
+  const waCopyBtn = document.getElementById('wa-copy-btn');
+  const submitBtn = document.getElementById('submit-btn');
 
-  // ─── Smooth scroll para anclas ────────────────────────────────────────────
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        const offset = 80;
-        const top = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
-    });
-  });
-
-  // ─── Init ──────────────────────────────────────────────────────────────────
-  document.addEventListener('DOMContentLoaded', () => {
-    updateActiveLink();
-  });
-
-  function buildWhatsAppUrl(data) {
-    const text = [
-      '👋 *Nuevo mensaje desde cetustudios.com*',
+  function generateWhatsAppLink(data) {
+    const lines = [
+      '👋 *Hola Cetu Studios, quiero cotizar un proyecto:*',
       '',
-      `*Nombre:* ${data.nombre}`,
-      data.empresa ? `*Empresa:* ${data.empresa}` : '',
-      `*Correo:* ${data.correo}`,
-      data.servicio ? `*Servicio de interés:* ${data.servicio}` : '',
+      `👤 *Nombre:* ${data.name}`,
+      data.company ? `🏢 *Empresa:* ${data.company}` : '',
+      `📧 *Correo:* ${data.email}`,
+      `🛠️ *Servicio de interés:* ${data.service}`,
       '',
-      `*Mensaje:*`,
-      data.mensaje
-    ].filter(Boolean).join('\n');
+      '📝 *Mensaje:*',
+      data.message
+    ].filter(Boolean);
 
-    return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+    const text = encodeURIComponent(lines.join('\n'));
+    return `https://wa.me/${WA_PHONE}?text=${text}`;
   }
 
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      // Recolectar datos
-      const data = {
-        nombre:   document.getElementById('f-name')?.value.trim() || '',
-        empresa:  document.getElementById('f-company')?.value.trim() || '',
-        correo:   document.getElementById('f-email')?.value.trim() || '',
-        servicio: document.getElementById('f-service')?.value || '',
-        mensaje:  document.getElementById('f-message')?.value.trim() || ''
-      };
+      const name = document.getElementById('form-name')?.value.trim();
+      const email = document.getElementById('form-email')?.value.trim();
+      const company = document.getElementById('form-company')?.value.trim();
+      const service = document.getElementById('form-service')?.value;
+      const message = document.getElementById('form-message')?.value.trim();
 
-      // Validación básica
-      if (!data.nombre || !data.correo || !data.mensaje) {
-        alert('Por favor completa los campos obligatorios: nombre, correo y mensaje.');
+      if (!name || !email || !service || !message) {
+        alert('Por favor completa todos los campos requeridos (*)');
         return;
       }
 
-      // Deshabilitar botón
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Enviando...';
+        submitBtn.innerHTML = '<span>Enviando mensaje...</span>';
       }
 
-      // Simular envío (en producción, aquí va la llamada al backend)
+      const formData = { name, email, company, service, message };
+      const waUrl = generateWhatsAppLink(formData);
+
       setTimeout(() => {
-        // Ocultar form, mostrar éxito
-        contactForm.classList.add('hidden');
         contactForm.style.display = 'none';
-
-        if (formSuccess) {
-          formSuccess.classList.remove('hidden');
-          formSuccess.style.display = 'flex';
+        if (contactSuccess) {
+          contactSuccess.classList.remove('hidden');
         }
-
-        // Configurar enlace de WhatsApp
-        if (waForward) {
-          waForward.href = buildWhatsAppUrl(data);
+        if (waCopyBtn) {
+          waCopyBtn.href = waUrl;
         }
-
-        // Scroll suave al success
-        formSuccess?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 800);
+        initIcons();
+        contactSuccess?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 600);
     });
   }
 
-  // ─── Init ──────────────────────────────────────────────────────────────────
-  document.addEventListener('DOMContentLoaded', () => {
-    updateActiveLink();
-  });
+  // Lifecycle Initialization
+  function init() {
+    initIcons();
+    initScrollReveal();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  }
 
-  if (document.readyState === 'interactive' || document.readyState === 'complete') {
-    updateActiveLink();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 
 })();
