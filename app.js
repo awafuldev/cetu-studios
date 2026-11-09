@@ -1,13 +1,11 @@
 /* ==========================================================================
-   CETU STUDIOS — app.js v3
-   Animaciones, Navbar interactivo, Scroll Spy, Mobile Drawer,
-   y Formulario de contacto con WhatsApp forward.
+   CETU STUDIOS — app.js v4 (Carousel, Stepper & Interactive Conversion)
    ========================================================================== */
 
 (function () {
   'use strict';
 
-  // Número oficial de WhatsApp de Cetu Studios
+  // WhatsApp oficial de Cetu Studios
   const WA_PHONE = '18090000000';
 
   // 1. Inicializar Lucide Icons
@@ -17,52 +15,20 @@
     }
   }
 
-  // 2. Navbar Scroll Effect & Scroll Spy
+  // 2. Navbar Scroll & Mobile Menu
   const navbar = document.getElementById('navbar');
-  const navItems = document.querySelectorAll('.nav-item');
-  const sections = ['inicio', 'servicios', 'proyectos', 'proceso', 'nosotros', 'contacto'];
-
-  function handleScroll() {
-    const scrollPos = window.scrollY;
-
-    // Navbar pill styling on scroll
-    if (navbar) {
-      if (scrollPos > 40) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    }
-
-    // Scroll spy for active link
-    const viewCenter = scrollPos + window.innerHeight * 0.35;
-    let currentSection = 'inicio';
-
-    sections.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) {
-        const top = el.offsetTop;
-        const bottom = top + el.offsetHeight;
-        if (viewCenter >= top && viewCenter < bottom) {
-          currentSection = id;
-        }
-      }
-    });
-
-    navItems.forEach(item => {
-      const href = item.getAttribute('href');
-      if (href === '#' + currentSection) {
-        item.classList.add('active');
-      } else {
-        item.classList.remove('active');
-      }
-    });
-  }
-
-  // 3. Mobile Drawer Toggle
   const mobileToggle = document.getElementById('mobile-toggle');
   const mobileDrawer = document.getElementById('mobile-drawer');
   const mobileLinks = document.querySelectorAll('.mobile-link, .mobile-cta-wrap a');
+
+  function handleNavScroll() {
+    if (!navbar) return;
+    if (window.scrollY > 40) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }
 
   if (mobileToggle && mobileDrawer) {
     mobileToggle.addEventListener('click', () => {
@@ -78,7 +44,7 @@
     });
   }
 
-  // 4. Smooth Anchor Scrolling
+  // 3. Smooth Anchor Scrolling
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
@@ -86,7 +52,7 @@
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         e.preventDefault();
-        const headerOffset = 90;
+        const headerOffset = 80;
         const elementPosition = targetElement.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -98,51 +64,113 @@
     });
   });
 
-  // 5. Scroll Reveal Animations (con fallback seguro)
-  function initScrollReveal() {
-    document.documentElement.classList.add('js-enabled');
-    const reveals = document.querySelectorAll('.reveal-on-scroll');
+  // 4. Horizontal Services Carousel
+  const viewport = document.getElementById('services-viewport');
+  const prevBtn = document.getElementById('carousel-prev-btn');
+  const nextBtn = document.getElementById('carousel-next-btn');
+  const dotsContainer = document.getElementById('services-dots');
+  const slides = document.querySelectorAll('.service-slide');
 
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            observer.unobserve(entry.target);
-          }
+  if (viewport && slides.length > 0) {
+    // Generate Pagination Dots
+    dotsContainer.innerHTML = '';
+    slides.forEach((_, idx) => {
+      const dot = document.createElement('span');
+      dot.className = 'dot' + (idx === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Ir al servicio ${idx + 1}`);
+      dot.addEventListener('click', () => {
+        const slideWidth = slides[0].offsetWidth + 24; // width + gap
+        viewport.scrollTo({
+          left: idx * slideWidth,
+          behavior: 'smooth'
         });
-      }, {
-        threshold: 0.12,
-        rootMargin: '0px 0px -50px 0px'
       });
+      dotsContainer.appendChild(dot);
+    });
 
-      reveals.forEach(el => observer.observe(el));
-    } else {
-      reveals.forEach(el => el.classList.add('revealed'));
+    const dots = dotsContainer.querySelectorAll('.dot');
+
+    function updateActiveDot() {
+      const slideWidth = slides[0].offsetWidth + 24;
+      const activeIndex = Math.round(viewport.scrollLeft / slideWidth);
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === activeIndex);
+      });
+    }
+
+    viewport.addEventListener('scroll', updateActiveDot, { passive: true });
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        const slideWidth = slides[0].offsetWidth + 24;
+        viewport.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        const slideWidth = slides[0].offsetWidth + 24;
+        viewport.scrollBy({ left: slideWidth, behavior: 'smooth' });
+      });
     }
   }
 
-  // 6. Formulario de Contacto + Forward a WhatsApp
+  // 5. Featured Projects Tabs Switcher
+  const projectTabs = document.querySelectorAll('.project-tab-btn');
+  const projectSlides = document.querySelectorAll('.project-slide-item');
+
+  projectTabs.forEach((tab) => {
+    tab.addEventListener('click', function () {
+      const targetIndex = this.getAttribute('data-project-target');
+
+      // Update Tabs
+      projectTabs.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+
+      // Update Slides
+      projectSlides.forEach(slide => slide.classList.remove('active'));
+      const activeSlide = document.getElementById('project-slide-' + targetIndex);
+      if (activeSlide) {
+        activeSlide.classList.add('active');
+      }
+    });
+  });
+
+  // 6. Interactive Process Stepper
+  const stepItems = document.querySelectorAll('.step-interactive-item');
+  const stepperBar = document.getElementById('stepper-bar');
+
+  stepItems.forEach((step, index) => {
+    step.addEventListener('click', () => {
+      stepItems.forEach(s => s.classList.remove('active'));
+      step.classList.add('active');
+
+      if (stepperBar) {
+        const percentage = ((index + 1) / stepItems.length) * 100;
+        stepperBar.style.width = percentage + '%';
+      }
+    });
+  });
+
+  // 7. Direct Conversion Form + WhatsApp Sync
   const contactForm = document.getElementById('contact-form');
   const contactSuccess = document.getElementById('contact-success');
   const waCopyBtn = document.getElementById('wa-copy-btn');
   const submitBtn = document.getElementById('submit-btn');
 
-  function generateWhatsAppLink(data) {
+  function buildWhatsAppUrl(data) {
     const lines = [
       '👋 *Hola Cetu Studios, quiero cotizar un proyecto:*',
       '',
       `👤 *Nombre:* ${data.name}`,
-      data.company ? `🏢 *Empresa:* ${data.company}` : '',
-      `📧 *Correo:* ${data.email}`,
+      `📞 *Contacto:* ${data.contact}`,
       `🛠️ *Servicio de interés:* ${data.service}`,
       '',
-      '📝 *Mensaje:*',
+      '📝 *Idea o descripción:*',
       data.message
     ].filter(Boolean);
 
-    const text = encodeURIComponent(lines.join('\n'));
-    return `https://wa.me/${WA_PHONE}?text=${text}`;
+    return `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(lines.join('\n'))}`;
   }
 
   if (contactForm) {
@@ -150,12 +178,11 @@
       e.preventDefault();
 
       const name = document.getElementById('form-name')?.value.trim();
-      const email = document.getElementById('form-email')?.value.trim();
-      const company = document.getElementById('form-company')?.value.trim();
+      const contact = document.getElementById('form-contact')?.value.trim();
       const service = document.getElementById('form-service')?.value;
       const message = document.getElementById('form-message')?.value.trim();
 
-      if (!name || !email || !service || !message) {
+      if (!name || !contact || !service || !message) {
         alert('Por favor completa todos los campos requeridos (*)');
         return;
       }
@@ -165,8 +192,8 @@
         submitBtn.innerHTML = '<span>Enviando mensaje...</span>';
       }
 
-      const formData = { name, email, company, service, message };
-      const waUrl = generateWhatsAppLink(formData);
+      const formData = { name, contact, service, message };
+      const waUrl = buildWhatsAppUrl(formData);
 
       setTimeout(() => {
         contactForm.style.display = 'none';
@@ -178,16 +205,15 @@
         }
         initIcons();
         contactSuccess?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 600);
+      }, 500);
     });
   }
 
-  // Lifecycle Initialization
+  // 8. Lifecycle Init
   function init() {
     initIcons();
-    initScrollReveal();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    window.addEventListener('scroll', handleNavScroll, { passive: true });
+    handleNavScroll();
   }
 
   if (document.readyState === 'loading') {
