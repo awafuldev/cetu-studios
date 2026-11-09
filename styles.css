@@ -134,13 +134,31 @@ button {
 .nav-brand {
   display: flex;
   align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.brand-crown {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
   flex-shrink: 0;
 }
 
-.brand-logo {
-  height: 34px;
-  width: auto;
-  object-fit: contain;
+.brand-wordmark {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--crema);
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.brand-wordmark strong {
+  font-weight: 800;
+  color: var(--dorado);
 }
 
 .nav-menu {
@@ -232,10 +250,12 @@ button {
 }
 
 .mobile-drawer.open {
-  max-height: 480px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
   opacity: 1;
   pointer-events: auto;
   padding: 24px;
+  z-index: 999;
 }
 
 .mobile-drawer-inner {
@@ -2152,10 +2172,14 @@ button {
 @media (max-width: 768px) {
   .pill-navbar {
     padding: 8px 14px;
-    gap: 16px;
+    gap: 0;
+    justify-content: space-between;
   }
   .nav-menu { display: none; }
   .btn-pill-cta { display: none; }
+  .nav-right {
+    margin-left: auto;
+  }
   .btn-mobile-toggle { display: flex; }
 
   .hero-section {
@@ -2209,3 +2233,347 @@ button {
     text-align: center;
   }
 }
+
+/* ----------------------------------------------
+   NEW LOGO: Brand Crown + Wordmark
+---------------------------------------------- */
+.brand-crown {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(214,175,52,0.4));
+}
+
+/* ----------------------------------------------
+   CARD 2: Store Online (Browser mockup)
+---------------------------------------------- */
+.ui-mockup-store .mockup-browser-viewport.store-vp {
+  padding: 10px 10px 8px;
+  background: #0d1117;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.store-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 6px;
+  background: rgba(214,175,52,0.1);
+  border-radius: 6px;
+}
+.store-logo-mini {
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #D6AF34;
+}
+.store-cart-icon {
+  font-size: 0.65rem;
+  color: #D6AF34;
+  position: relative;
+}
+.cart-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #D6AF34;
+  color: #151613;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  font-size: 0.45rem;
+  font-weight: 800;
+  vertical-align: top;
+}
+.store-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+.store-product-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 6px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.product-img-box {
+  width: 100%;
+  height: 36px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #2a2a1a 0%, #3a3010 100%);
+}
+.product-img-box.img2 { background: linear-gradient(135deg, #1a2a2a 0%, #103030 100%); }
+.product-img-box.img3 { background: linear-gradient(135deg, #2a1a2a 0%, #301030 100%); }
+.product-name-mini {
+  font-size: 0.45rem;
+  color: #FDFBF3;
+  font-weight: 600;
+}
+.product-price-mini {
+  font-size: 0.5rem;
+  font-weight: 800;
+}
+.store-cta-row {
+  display: flex;
+  justify-content: center;
+}
+.store-buy-btn {
+  background: linear-gradient(135deg, #F7DE7E, #D6AF34);
+  color: #151613;
+  font-size: 0.5rem;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+/* ----------------------------------------------
+   CARD 3: Admin Panel (Browser mockup)
+---------------------------------------------- */
+.ui-mockup-admin .mockup-browser-viewport.admin-vp {
+  padding: 10px 10px 8px;
+  background: #0d1117;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.admin-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.admin-panel-title {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #FDFBF3;
+  letter-spacing: 0.05em;
+}
+.admin-date-badge {
+  font-size: 0.45rem;
+  background: rgba(214,175,52,0.2);
+  color: #D6AF34;
+  padding: 2px 7px;
+  border-radius: 20px;
+  border: 1px solid rgba(214,175,52,0.3);
+}
+.admin-stats-row {
+  display: flex;
+  gap: 6px;
+}
+.admin-stat-box {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  border-radius: 6px;
+  padding: 6px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.admin-stat-num {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #FDFBF3;
+  line-height: 1;
+}
+.admin-stat-lbl {
+  font-size: 0.4rem;
+  color: rgba(253,251,243,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.admin-table-mini {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.admin-table-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.04);
+  border-radius: 5px;
+  padding: 5px 8px;
+}
+.admin-row-name {
+  font-size: 0.5rem;
+  color: #FDFBF3;
+  font-weight: 600;
+}
+.admin-row-badge {
+  font-size: 0.42rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+.badge-green {
+  background: rgba(34,197,94,0.2);
+  color: #4ade80;
+  border: 1px solid rgba(34,197,94,0.3);
+}
+.badge-yellow {
+  background: rgba(214,175,52,0.2);
+  color: #D6AF34;
+  border: 1px solid rgba(214,175,52,0.3);
+}
+
+/* ----------------------------------------------
+   CARD 4: Inventory (keep existing, add browser chrome styles)
+---------------------------------------------- */
+.ui-mockup-inventory .mockup-browser-viewport.inv-vp {
+  padding: 10px 10px 8px;
+  background: #0d1117;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.inv-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.inv-title-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #FDFBF3;
+}
+.inv-total-badge {
+  font-size: 0.45rem;
+  background: rgba(214,175,52,0.15);
+  color: #D6AF34;
+  padding: 2px 7px;
+  border-radius: 20px;
+  border: 1px solid rgba(214,175,52,0.25);
+}
+.inv-items-simple {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.inv-item-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.inv-item-name {
+  font-size: 0.47rem;
+  color: #FDFBF3;
+  flex: 0 0 90px;
+  font-weight: 600;
+}
+.inv-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.inv-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #D6AF34, #F7DE7E);
+  border-radius: 10px;
+  transition: width 1s ease;
+}
+.inv-bar-fill.fill-warning {
+  background: linear-gradient(90deg, #ef4444, #f97316);
+}
+.inv-qty-num {
+  font-size: 0.47rem;
+  color: rgba(253,251,243,0.6);
+  flex: 0 0 24px;
+  text-align: right;
+  font-weight: 600;
+}
+.inv-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.45rem;
+  color: rgba(253,251,243,0.5);
+  padding-top: 2px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ----------------------------------------------
+   CARD 5: Custom Software (Browser mockup)
+---------------------------------------------- */
+.ui-mockup-custom .mockup-browser-viewport.custom-vp {
+  padding: 0;
+  background: #0d1117;
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+.custom-layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.custom-sidebar {
+  width: 32px;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0;
+  gap: 10px;
+  border-right: 1px solid rgba(214,175,52,0.1);
+}
+.cust-icon {
+  font-size: 0.75rem;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.cust-icon.active {
+  opacity: 1;
+}
+.custom-main {
+  flex: 1;
+  padding: 10px 10px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.custom-module-title {
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: #FDFBF3;
+  line-height: 1.2;
+}
+.custom-feat-row {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.custom-feat-pill {
+  font-size: 0.42rem;
+  padding: 2px 6px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  color: rgba(253,251,243,0.6);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.custom-feat-pill.active {
+  background: rgba(214,175,52,0.15);
+  color: #D6AF34;
+  border-color: rgba(214,175,52,0.3);
+}
+.custom-badge-row {
+  margin-top: auto;
+}
+.custom-badge-text {
+  display: inline-block;
+  font-size: 0.45rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #D6AF34, #F7DE7E);
+  color: #151613;
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
