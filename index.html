@@ -201,8 +201,31 @@
             <div class="service-slide">
               <div class="slide-card">
                 <div class="slide-img-box">
-                  <img src="assets/service-web.jpg" alt="Páginas Web Profesionales" class="slide-img">
-                  <span class="slide-badge">Presencia Web</span>
+                  <!-- UI Mockup: Ventana de navegador con página profesional -->
+                  <div class="ui-preview-mockup ui-mockup-web">
+                    <div class="mockup-browser-chrome">
+                      <div class="mockup-dots"><span></span><span></span><span></span></div>
+                      <div class="mockup-url-bar">minegocio.com</div>
+                    </div>
+                    <div class="mockup-browser-viewport">
+                      <div class="mini-site-header">
+                        <div class="mini-logo">BRAND</div>
+                        <div class="mini-nav"><span></span><span></span><span></span></div>
+                        <div class="mini-cta-btn">Contacto</div>
+                      </div>
+                      <div class="mini-site-hero">
+                        <div class="mini-hero-text">
+                          <div class="mini-hero-title">Impulsa Tu Marca</div>
+                          <div class="mini-hero-btn">Ver Catálogo</div>
+                        </div>
+                        <div class="mini-hero-media"></div>
+                      </div>
+                      <div class="mini-site-cards">
+                        <div class="mini-card"></div>
+                        <div class="mini-card"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="slide-body">
                   <h3 class="slide-title">Páginas Web Profesionales</h3>
@@ -215,12 +238,49 @@
               </div>
             </div>
 
-            <!-- Card 2: Tiendas Online -->
+            <!-- Card 2: Tiendas Online (Estadísticas de ventas, pedidos, ingresos) -->
             <div class="service-slide">
               <div class="slide-card">
                 <div class="slide-img-box">
-                  <img src="assets/service-ecommerce.jpg" alt="Tiendas Online y Ecommerce" class="slide-img">
-                  <span class="slide-badge">Ventas 24/7</span>
+                  <!-- UI Mockup: Estadísticas de mi tienda -->
+                  <div class="ui-preview-mockup ui-mockup-store">
+                    <div class="mockup-panel-header">
+                      <div class="panel-title-wrap">
+                        <span class="live-indicator"></span>
+                        <span class="panel-label">Estadísticas de Mi Tienda</span>
+                      </div>
+                      <span class="panel-badge-today">Hoy</span>
+                    </div>
+                    <div class="mockup-metrics-row">
+                      <div class="metric-box">
+                        <span class="metric-label">Ingresos</span>
+                        <span class="metric-val text-gold">$38,450</span>
+                        <span class="metric-trend">↑ +24%</span>
+                      </div>
+                      <div class="metric-box">
+                        <span class="metric-label">Pedidos</span>
+                        <span class="metric-val">142</span>
+                        <span class="metric-sub">Completados</span>
+                      </div>
+                      <div class="metric-box">
+                        <span class="metric-label">Conversión</span>
+                        <span class="metric-val">4.8%</span>
+                        <span class="metric-sub">De visitas</span>
+                      </div>
+                    </div>
+                    <div class="mockup-chart-wrap">
+                      <svg viewBox="0 0 300 55" class="mini-svg-chart">
+                        <defs>
+                          <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#D6AF34" stop-opacity="0.4"/>
+                            <stop offset="100%" stop-color="#D6AF34" stop-opacity="0"/>
+                          </linearGradient>
+                        </defs>
+                        <path d="M0,45 Q40,38 80,42 T160,22 T240,12 T300,5 L300,55 L0,55 Z" fill="url(#chartGrad)"/>
+                        <path d="M0,45 Q40,38 80,42 T160,22 T240,12 T300,5" fill="none" stroke="#D6AF34" stroke-width="2.5" class="chart-line-animated"/>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
                 <div class="slide-body">
                   <h3 class="slide-title">Tiendas Online y Ecommerce</h3>
@@ -237,8 +297,37 @@
             <div class="service-slide">
               <div class="slide-card">
                 <div class="slide-img-box">
-                  <img src="assets/service-admin.jpg" alt="Sistemas Administrativos" class="slide-img">
-                  <span class="slide-badge">Control de Negocio</span>
+                  <!-- UI Mockup: Panel de gestión organizada -->
+                  <div class="ui-preview-mockup ui-mockup-admin">
+                    <div class="mockup-panel-header">
+                      <div class="panel-title-wrap">
+                        <i data-lucide="layout-dashboard" class="icon-tiny text-gold"></i>
+                        <span class="panel-label">Panel Administrativo</span>
+                      </div>
+                      <span class="panel-badge-status">Actividad en vivo</span>
+                    </div>
+                    <div class="mockup-table-mini">
+                      <div class="table-row-item">
+                        <span class="doc-code">Factura B0100452</span>
+                        <span class="doc-client">Corp. Alfa SRL</span>
+                        <span class="doc-status status-success">Cobrado</span>
+                      </div>
+                      <div class="table-row-item">
+                        <span class="doc-code">OC #892</span>
+                        <span class="doc-client">Importadora RD</span>
+                        <span class="doc-status status-pending">Aprobado</span>
+                      </div>
+                      <div class="table-row-item">
+                        <span class="doc-code">Cierre de Caja</span>
+                        <span class="doc-client">Turno Tarde</span>
+                        <span class="doc-status status-success">Cuadrado</span>
+                      </div>
+                    </div>
+                    <div class="mockup-admin-footer">
+                      <span>34 registros hoy</span>
+                      <span class="text-gold">100% al día</span>
+                    </div>
+                  </div>
                 </div>
                 <div class="slide-body">
                   <h3 class="slide-title">Sistemas Administrativos</h3>
@@ -255,8 +344,43 @@
             <div class="service-slide">
               <div class="slide-card">
                 <div class="slide-img-box">
-                  <img src="assets/software-inventory.jpg" alt="Inventario y Ventas" class="slide-img">
-                  <span class="slide-badge">Cero Faltantes</span>
+                  <!-- UI Mockup: Productos, existencias y ventas -->
+                  <div class="ui-preview-mockup ui-mockup-inventory">
+                    <div class="mockup-panel-header">
+                      <div class="panel-title-wrap">
+                        <i data-lucide="package" class="icon-tiny text-gold"></i>
+                        <span class="panel-label">Stock & Existencias</span>
+                      </div>
+                      <span class="panel-badge-today">1,420 unids.</span>
+                    </div>
+                    <div class="inventory-items-list">
+                      <div class="inv-row">
+                        <div class="inv-name-wrap">
+                          <span class="inv-name">Cadena Cubana 925</span>
+                          <span class="inv-qty">28 en stock</span>
+                        </div>
+                        <div class="inv-bar"><div class="inv-bar-fill" style="width: 78%;"></div></div>
+                      </div>
+                      <div class="inv-row">
+                        <div class="inv-name-wrap">
+                          <span class="inv-name">Anillo Solitario</span>
+                          <span class="inv-qty text-warning">8 en stock (bajo)</span>
+                        </div>
+                        <div class="inv-bar"><div class="inv-bar-fill fill-warning" style="width: 28%;"></div></div>
+                      </div>
+                      <div class="inv-row">
+                        <div class="inv-name-wrap">
+                          <span class="inv-name">Dije Cruz Tallada</span>
+                          <span class="inv-qty">54 en stock</span>
+                        </div>
+                        <div class="inv-bar"><div class="inv-bar-fill" style="width: 90%;"></div></div>
+                      </div>
+                    </div>
+                    <div class="mockup-admin-footer">
+                      <span>Rotación mensual: 8.4x</span>
+                      <span class="text-gold">Ventas: +32%</span>
+                    </div>
+                  </div>
                 </div>
                 <div class="slide-body">
                   <h3 class="slide-title">Inventario y Ventas</h3>
@@ -273,8 +397,33 @@
             <div class="service-slide">
               <div class="slide-card">
                 <div class="slide-img-box">
-                  <img src="assets/service-software.jpg" alt="Software Personalizado" class="slide-img">
-                  <span class="slide-badge">A Tu Medida</span>
+                  <!-- UI Mockup: Aplicación modular personalizada -->
+                  <div class="ui-preview-mockup ui-mockup-custom">
+                    <div class="custom-app-layout">
+                      <div class="app-sidebar-mini">
+                        <div class="sidebar-icon active"><i data-lucide="layers" class="icon-tiny"></i></div>
+                        <div class="sidebar-icon"><i data-lucide="users" class="icon-tiny"></i></div>
+                        <div class="sidebar-icon"><i data-lucide="file-text" class="icon-tiny"></i></div>
+                        <div class="sidebar-icon"><i data-lucide="settings" class="icon-tiny"></i></div>
+                      </div>
+                      <div class="app-content-mini">
+                        <div class="app-header-mini">
+                          <span class="app-module-name">Módulo Operativo Propio</span>
+                          <span class="app-badge-custom">A Tu Medida</span>
+                        </div>
+                        <div class="app-cards-mini">
+                          <div class="app-card-item">
+                            <div class="card-item-title">Reglas de negocio automáticas</div>
+                            <div class="card-item-toggle"><span class="toggle-switch active"></span></div>
+                          </div>
+                          <div class="app-card-item">
+                            <div class="card-item-title">Permisos por sucursal</div>
+                            <div class="card-item-toggle"><span class="toggle-switch active"></span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="slide-body">
                   <h3 class="slide-title">Software Personalizado</h3>
@@ -291,8 +440,40 @@
             <div class="service-slide">
               <div class="slide-card">
                 <div class="slide-img-box">
-                  <img src="assets/software-crm.jpg" alt="Automatizaciones de Procesos" class="slide-img">
-                  <span class="slide-badge">Ahorro de Tiempo</span>
+                  <!-- UI Mockup: Flujo visual conectado con flechas -->
+                  <div class="ui-preview-mockup ui-mockup-automation">
+                    <div class="mockup-panel-header">
+                      <div class="panel-title-wrap">
+                        <i data-lucide="zap" class="icon-tiny text-gold"></i>
+                        <span class="panel-label">Flujo Automático</span>
+                      </div>
+                      <span class="auto-pulse-badge">Activo</span>
+                    </div>
+                    <div class="flow-pipeline-wrap">
+                      <div class="flow-step-box">
+                        <div class="flow-step-icon"><i data-lucide="shopping-cart" class="icon-tiny"></i></div>
+                        <span class="flow-step-text">1. Venta en web</span>
+                      </div>
+                      <div class="flow-connector">
+                        <span class="flow-pulse-dot"></span>
+                      </div>
+                      <div class="flow-step-box active-node">
+                        <div class="flow-step-icon icon-wa-color"><i data-lucide="message-circle" class="icon-tiny"></i></div>
+                        <span class="flow-step-text">2. WhatsApp</span>
+                      </div>
+                      <div class="flow-connector">
+                        <span class="flow-pulse-dot"></span>
+                      </div>
+                      <div class="flow-step-box">
+                        <div class="flow-step-icon"><i data-lucide="check-circle" class="icon-tiny"></i></div>
+                        <span class="flow-step-text">3. Stock al día</span>
+                      </div>
+                    </div>
+                    <div class="mockup-admin-footer">
+                      <span>Ejecución: Inmediata</span>
+                      <span class="text-gold">0 errores</span>
+                    </div>
+                  </div>
                 </div>
                 <div class="slide-body">
                   <h3 class="slide-title">Automatizaciones de Procesos</h3>
